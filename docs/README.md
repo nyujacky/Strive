@@ -52,10 +52,6 @@ Strava is a web application that is essentially the facebook for athletes. You c
 
 **Objective:** Display workout stats as well as lifetime totals.
 
-### Phase 6: Infinite Scrolling (1 day)
-
-**Objective** Infinite scrolling on feed
-
 ### Bonus Features (TBD)
 - [ ] Infinite Scrolling on feed
 - [ ] Friends
