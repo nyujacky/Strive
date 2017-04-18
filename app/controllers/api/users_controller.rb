@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.limit(20)
+    @users = User.all
     render :index
   end
 
