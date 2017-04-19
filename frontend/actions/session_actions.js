@@ -18,7 +18,9 @@ const receiveErrors = (errors) => {
 };
 
 export const login = user => dispatch => {
-  return APIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)));
+  return APIUtil.login(user).then(currentuser => {
+    return dispatch(receiveCurrentUser(currentuser))
+  } );
 };
 
 export const logout = () => dispatch => {
