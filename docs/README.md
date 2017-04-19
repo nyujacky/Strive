@@ -1,10 +1,10 @@
-#Strive
+# Strive
 
 [Live Strive][strive]
 
 [strive]: https://striver.herokuapp.com/#/
 
-##Minimum Viable Product
+## Minimum Viable Product
 Strava is a web application that is essentially the facebook for athletes. You can track your workouts, keep your friends updated, all the while looking for fellow athletes to conenct with.
 
 
