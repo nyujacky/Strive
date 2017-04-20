@@ -42,9 +42,9 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up </Link>;
+			return <Link to="/signup">Sign up</Link>;
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return <Link to="/login">Log in</Link>;
 		}
 	}
 
@@ -64,37 +64,40 @@ class SessionForm extends React.Component {
 
 		return (
 			<div className="login-form-container">
+				<nav className = "login-navbar">
+					<h1>STRIVE</h1>
+					<h2>{this.navLink()}</h2>
+				</nav>
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to Strive!
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
-					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
-						<label> Email:
-							<input type="text"
-								value={this.state.email}
-								onChange={this.update("email")}
-								className="login-input" />
-						</label>
-						<br/>
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-								className="login-input" />
-						</label>
-						<br/>
-						<input type="submit" value="Submit" />
+						<div className = "login-fields">
+							<label className = "email-field">
+								<input type="text"
+									value={this.state.email}
+									onChange={this.update("email")}
+									className="login-input"
+									placeholder = "Email"/>
+							</label>
+							<br/>
+							<label className = "password-field">
+								<input type="password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									className="login-input"
+									placeholder = "Password"/>
+							</label>
+							{this.renderErrors()}
+							<br/>
+							<input type="submit" value={this.props.formType} />
+							<input onClick = {this.guestLogin} type= "submit" value = {"Guest " +  this.props.formType}  />
+						</div>
 					</div>
-				</form>
-				<form onClick = {this.guestLogin}>
-					<input type= "submit" value = "Guest Login" />
 				</form>
 			</div>
 		);
 	}
 
 }
-
+// Please {this.props.formType} or
 export default withRouter(SessionForm);

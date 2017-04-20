@@ -1,0 +1,21 @@
+.login-navbar {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  align-items: center;
+}
+
+.login-navbar h1{
+  font-size: 24px;
+  margin-left: 100px;
+  color: #FF4500;
+  font-weight: bolder;
+}
+
+.login-navbar h2{
+  font-size: 16px;
+  margin-right: 100px;
+  color: #666;
+  padding: 5px;
+  border: 1px solid #D3D3D3;
+}

@@ -1,0 +1,24 @@
+.login-form-box{
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  background-image: image-url('mountain-2158661_1280.jpg');
+  height: 600px;
+}
+input::-webkit-input-placeholder {
+   font-size: 14px;
+   line-height: 3;
+}
+
+.login-form {
+  margin-top: 50px;
+  background: rgba(0,0,0,0.75);
+  padding: 10px;
+  height: 630px;
+  width: 300px;
+}
+
+.login-fields {
+  margin: 250px 0 0 0;
+  height: 50px;
+}
