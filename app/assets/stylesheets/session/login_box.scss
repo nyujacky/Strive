@@ -2,8 +2,18 @@
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  background-image: image-url('mountain-2158661_1280.jpg');
-  height: 600px;
+  background-image: image-url('mountain-2158661_12801.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+
+  // position: fixed;
+  //
+  //
+  // /* Preserve aspet ratio */
+  // min-width: 100%;
+  // min-height: auto;
 }
 input::-webkit-input-placeholder {
    font-size: 14px;

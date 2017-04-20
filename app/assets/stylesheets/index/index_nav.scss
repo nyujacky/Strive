@@ -6,8 +6,15 @@
 
 .index-content{
   background-image: image-url('snowmobiles-2035500_12801.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  // height: 800px;
 
-  height: 561px;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+
 }
 
 .index-header{
