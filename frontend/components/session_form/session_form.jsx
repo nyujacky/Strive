@@ -66,12 +66,27 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<nav className = "login-navbar">
-					<h1>STRIVE</h1>
-					<h2>{this.navLink()}</h2>
+					<div className = "login-navbar-links">
+						<div>
+							<Link to="/" className = "logo-link">STRIVE</Link>
+						</div>
+						<div className = "nav-link">{this.navLink()}</div>
+					</div>
+
 				</nav>
+
 				<form onSubmit={this.handleSubmit} className="login-form-box">
+
 					<div className="login-form">
+
+						<div className = "login-form-title">
+							{this.props.formType}
+						</div>
+						<div className = "placeholder">
+
+						</div>
 						<br/>
+
 						<div className = "login-fields">
 							<label className = "email-field">
 								<input type="text"
@@ -88,12 +103,12 @@ class SessionForm extends React.Component {
 									className="login-input"
 									placeholder = " Password"/>
 							</label>
-							{this.renderErrors()}
+							<div className = "errors">
+								{this.renderErrors()}
+							</div>
 							<br/>
-
-								<input className = "login-button" type="submit" value={this.props.formType} />
-								<input className = "login-button" onClick = {this.guestLogin} type= "submit" value = {"Guest " +  this.props.formType}  />
-
+								<button className = "login-button">{this.props.formType}</button>
+								<button className = "login-button" onClick = {this.guestLogin} >{"Guest " +  this.props.formType}</button>
 						</div>
 					</div>
 				</form>

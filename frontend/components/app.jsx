@@ -5,7 +5,7 @@ const App = ({children}) => {
   return (
     <div >
       <div className = "index-nav" >
-
+    
         <h1 className = "index-header"> Strive</h1>
         <GreetingContainer />
         {children}

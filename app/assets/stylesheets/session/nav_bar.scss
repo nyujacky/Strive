@@ -3,35 +3,36 @@
   src: asset-url('custom-fonts/LemonMilk.otf')
 
 }
-.index-nav{
+
+.login-navbar {
   display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-navbar-links{
+  display: flex;
+  width: 500px;
   justify-content: space-between;
   align-items: center;
 }
 
-.index-content{
-  background-image: image-url('snowmobiles-2035500_12801.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 900px;
-  // height: 800px;
-
-
-}
-
-.index-header{
+.login-navbar .logo-link{
+  text-decoration: none;
   font-size: 24px;
+  // margin-left: 400px;
   color: #FF4500;
   font-weight: bolder;
-  margin-left: 20px;
   font-family: 'LemonMilk';
 }
 
-.login-signup a{
-  margin-right: 20px;
+.login-navbar .nav-link a{
   text-decoration: none;
   font-size: 16px;
+  // margin-right: 420px;
   color: #666;
   padding: 5px;
   border: 1px solid #D3D3D3;
+
 }

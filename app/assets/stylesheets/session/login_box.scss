@@ -2,11 +2,10 @@
   display: flex;
   justify-content: center;
   vertical-align: middle;
-  background-image: image-url('mountain-2158661_12801.jpg');
+  background-image: image-url('mountain-2158661_1920.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: auto;
+  background-size: 100%;
+  min-height: 900px;
 
   // position: fixed;
   //
@@ -22,32 +21,67 @@ input::-webkit-input-placeholder {
 
 .login-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 75px;
   background: rgba(0,0,0,0.75);
-  padding: 10px;
+
   height: 630px;
-  width: 400px;
+  width: 375px;
 }
+
+.login-form-title{
+    display: flex;
+    position: absolute;
+    top: 135px;
+    color: white;
+    background: rgba(0,0,0,0.28);
+    width: inherit;
+    height: 85px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: Helvetica;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+// .placeholder{
+//   min-height: 60px;
+// }
 
 .login-button {
   display: flex;
   margin: 5px;
+  padding: 0 2 0 2;
   height: 40px;
-  width: 300px;
+  width: 304px;
   background-color: #e34402;
   border-color: #e34402;
   color: #fff;
   text-transform: capitalize;
-  text-align: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: Helvetica;
+}
+
+.errors{
+  height: 35px;
+  max-height: 35px;
+  max-width: 300px;
 }
 
 .login-input {
-  margin: 5px;
+  margin: 5px ;
   height: 40px;
   width: 300px;
   border: 1px solid #666;
   background: rgba(0,0,0,0.5);
-  color: #CCC;
+  color: black;
+  font-size: 14px;
+}
+input:focus{
+  background: white;
 }
