@@ -3,10 +3,17 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({children}) => {
   return (
-    <div>
-      <h1> Strive</h1>
-      <GreetingContainer />
-      {children}
+    <div >
+      <div className = "index-nav" >
+
+        <h1 className = "index-header"> Strive</h1>
+        <GreetingContainer />
+        {children}
+      </div>
+
+      <div className = "index-content">
+
+      </div>
     </div>
   );
 };

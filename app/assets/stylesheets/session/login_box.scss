@@ -17,13 +17,20 @@ input::-webkit-input-placeholder {
   margin-top: 50px;
   background: rgba(0,0,0,0.75);
   padding: 10px;
-  height: 530px;
+  height: 630px;
   width: 400px;
 }
 
-.login-buttons {
+.login-button {
   display: flex;
-  justify-content: space-around;
+  margin: 5px;
+  height: 40px;
+  width: 300px;
+  background-color: #e34402;
+  border-color: #e34402;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .login-input {

@@ -60,6 +60,7 @@ class SessionForm extends React.Component {
 		);
 	}
 
+
 	render() {
 
 		return (
@@ -89,10 +90,10 @@ class SessionForm extends React.Component {
 							</label>
 							{this.renderErrors()}
 							<br/>
-							<div className = "login-buttons">
-								<input type="submit" value={this.props.formType} />
-								<input onClick = {this.guestLogin} type= "submit" value = {"Guest " +  this.props.formType}  />
-							</div>
+
+								<input className = "login-button" type="submit" value={this.props.formType} />
+								<input className = "login-button" onClick = {this.guestLogin} type= "submit" value = {"Guest " +  this.props.formType}  />
+
 						</div>
 					</div>
 				</form>
