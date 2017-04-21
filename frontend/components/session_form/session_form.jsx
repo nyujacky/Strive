@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
 
 						</div>
 						<br/>
-
+						
 						<div className = "login-fields">
 							<label className = "email-field">
 								<input type="text"
