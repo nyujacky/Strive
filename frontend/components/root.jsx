@@ -4,7 +4,10 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
-import RouteIndexContainer from './dashboard/route_index_container';
+import RouteIndexContainer from './dashboard/routes/route_index_container';
+import RouteNewContainer from './dashboard/routes/route_new_form_container';
+import RouteEditContainer from './dashboard/routes/route_edit_form_container';
+import RouteShowContainer from './dashboard/routes/route_show_container';
 
 const Root = ({store}) => {
   const _ensureLoggedIn = (nextState, replace) => {
