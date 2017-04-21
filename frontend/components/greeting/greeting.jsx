@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link,hashHistory} from 'react-router';
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -7,11 +7,20 @@ const sessionLinks = () => (
   </nav>
 );
 
+
+
 const personalGreeting = (currentUser, logout) => {
+  // const redirectIfLoggedOut = () => {
+  //   debugger
+  //   logout.then(hashHistory.push('/'));
+  // };
+  const handleLogout = (e) =>{
+    logout(e).then(()=> hashHistory.push('/'));
+  }
   return (
   <hgroup className="header-group">
     <h2 className="header-name">Hi, {currentUser.email}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
+    <button className="header-button" onClick={handleLogout}>Log Out</button>
 	</hgroup>
 );
 };

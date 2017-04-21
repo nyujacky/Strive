@@ -21,14 +21,16 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/');
+      replace('/dashboard');
+      //Changed from "/" so that everything returns to dashboard if logged in
+      //Change to "/" for testing so that you can log out
     }
   }
 
   return (
     <Provider store = { store} >
       <Router history = {hashHistory}>
-        <Route path = "/" component = {App}>
+        <Route path = "/" component = {App} onEnter = {_redirectIfLoggedIn}>
         </Route>
         <Route path = "/login" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/signup" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>

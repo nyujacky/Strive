@@ -4,7 +4,9 @@
 
 }
 .home-page-nav-bar {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .home-page-logo    {
   text-decoration: none;
@@ -13,4 +15,19 @@
   color: #FF4500;
   font-weight: bolder;
   font-family: 'LemonMilk';
+}
+
+.home-page-nav-links {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.home-page-nav-links div{
+  display: flex;
+  margin-left: 50px;
+}
+.home-page-nav-links div::after{
+  content: "\2304";
+
 }
