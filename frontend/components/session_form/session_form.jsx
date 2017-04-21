@@ -13,8 +13,11 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
-	componentWillUnmount(){
-		this.props.receiveErrors([]);
+	componentWillReceiveProps(newProps){
+		if(this.props.errors === newProps.errors){
+
+			this.props.receiveErrors([]);
+		}
 	}
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
@@ -86,7 +89,7 @@ class SessionForm extends React.Component {
 
 						</div>
 						<br/>
-						
+
 						<div className = "login-fields">
 							<label className = "email-field">
 								<input type="text"

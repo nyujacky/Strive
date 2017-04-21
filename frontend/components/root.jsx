@@ -3,11 +3,11 @@ import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
-import DashboardContainer from './dashboard/dashboard_container';
-import RouteIndexContainer from './dashboard/routes/route_index_container';
-import RouteNewContainer from './dashboard/routes/route_new_form_container';
-import RouteEditContainer from './dashboard/routes/route_edit_form_container';
-import RouteShowContainer from './dashboard/routes/route_show_container';
+import Dashboard from './dashboard/dashboard';
+// import RouteIndexContainer from './dashboard/routes/route_index_container';
+// import RouteContainer from './dashboard/routes/route_container';
+// import RouteShowContainer from './dashboard/routes/route_show_container';
+// import Dashboard from './dashboard/dashboard';
 
 const Root = ({store}) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -17,6 +17,7 @@ const Root = ({store}) => {
     }
   };
 
+  //Redirects to homepage so that people can't use URL to go back to signup/login
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
@@ -31,17 +32,18 @@ const Root = ({store}) => {
         </Route>
         <Route path = "/login" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/signup" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
-        <Route path = "/dashboard" component = {DashboardContainer}>
-          <Route path = "/dashboard/routes" component = {RouteIndexContainer}>
-            <Route path = "dashboard/routes/new" component = {RouteNewContainer}/>
-            <Route path = "/dashboard/routes/:routeId" component = {RouteShowContainer}/>
-            <Route path = "/dashboard/routes/:routeId/edit" component = {RouteEditContainer}/>
-          </Route>
-        </Route>
+        <Route path = "/dashboard" component = {Dashboard}/>
       </Router>
     </Provider>
   );
 
 }
 
+// <Route path = "/dashboard" component = {Dashboard}>
+//   <Route path = "/dashboard/routes" component = {RouteIndexContainer}>
+//     <Route path = "dashboard/routes/new" component = {RouteContainer}/>
+//     <Route path = "/dashboard/routes/:routeId" component = {RouteShowContainer}/>
+//     <Route path = "/dashboard/routes/:routeId/edit" component = {RouteContainer}/>
+//   </Route>
+// </Route>
 export default Root;
