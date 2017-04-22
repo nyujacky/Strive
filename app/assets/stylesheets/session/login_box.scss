@@ -82,9 +82,10 @@ input::-webkit-input-placeholder {
   width: 300px;
   border: 1px solid #666;
   background: rgba(0,0,0,0.5);
-  color: black;
+  color: white;
   font-size: 14px;
 }
 input:focus{
   background: white;
+  color: black;
 }
