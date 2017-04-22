@@ -43,6 +43,12 @@ class SessionForm extends React.Component {
 		this.props.processForm({email: "dummy@gmail.com", password: "123456"});
 	}
 
+	guestLoginButton(){
+		if (this.props.formType === "login"){
+			return <button className = "login-button" onClick = {this.guestLogin} >{"Guest Login"}</button>
+		}
+	}
+
 	navLink() {
 		if (this.props.formType === "login") {
 			return <Link to="/signup">Sign up</Link>;
@@ -111,7 +117,7 @@ class SessionForm extends React.Component {
 							</div>
 							<br/>
 								<button className = "login-button">{this.props.formType}</button>
-								<button className = "login-button" onClick = {this.guestLogin} >{"Guest " +  this.props.formType}</button>
+								{this.guestLoginButton()}
 						</div>
 					</div>
 				</form>
