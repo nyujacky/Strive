@@ -11,9 +11,15 @@ class Dashboard extends React.Component{
       <div className = "home-page-nav-bar">
         <div className = "home-page-nav-links">
           <Link to="/dashboard" className = "home-page-logo">STRIVE</Link>
-          <div className = "dashboard-links"> Dashboard </div>
-          <div className = "workout-links"> Workouts </div>
-          <div className = "explore-links"> Explore </div>
+          <div className = "home-page-dropdown">
+            <button className = "dashboard-links"> Dashboard </button>
+            <div>
+              <Link to= "/routes" > Route Index</Link>
+            </div>
+            <button className = "workout-links"> Workouts </button>
+            <button className = "explore-links"> Explore </button>
+          </div>
+
         </div>
         <div className = "dashboard-logout">
           <GreetingContainer />

@@ -4,6 +4,8 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import Dashboard from './dashboard/dashboard';
+import RouteForm from './dashboard/routes/route_form';
+import RouteIndex from './dashboard/routes/route_index';
 // import RouteIndexContainer from './dashboard/routes/route_index_container';
 // import RouteContainer from './dashboard/routes/route_container';
 // import RouteShowContainer from './dashboard/routes/route_show_container';
@@ -34,7 +36,12 @@ const Root = ({store}) => {
         </Route>
         <Route path = "/login" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/signup" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
-        <Route path = "/dashboard" component = {Dashboard}/>
+        <Route path = "/dashboard" component = {Dashboard} />
+        <Route path = "/routes" component = {RouteIndex}>
+        </Route>
+        <Route path = "/routes/new" component = {RouteForm}/>
+
+
       </Router>
     </Provider>
   );

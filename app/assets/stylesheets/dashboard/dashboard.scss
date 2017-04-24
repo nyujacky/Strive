@@ -6,7 +6,13 @@
 .home-page-nav-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  position: relative;
+  background-color: white;
+  z-index: 2;
+}
+.home-page-dropdown{
+  // cursor: pointer;
 }
 .home-page-logo    {
   text-decoration: none;
@@ -23,11 +29,19 @@
   padding: 10px;
 }
 
-.home-page-nav-links div{
+.home-page-dropdown{
+  display: flex;
+}
+
+
+.home-page-nav-links button{
   display: flex;
   margin-left: 50px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
 }
-.home-page-nav-links div::after{
+.home-page-nav-links button::after{
   content: "\2304";
 
 }

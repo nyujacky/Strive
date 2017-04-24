@@ -1,0 +1,21 @@
+body{
+  height: 100%;
+  width: 100%;
+}
+#root {
+  height: 100%;
+  .something{
+    height: 100vh;
+
+  }
+  .map-container{
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    .GoogleMap{
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
