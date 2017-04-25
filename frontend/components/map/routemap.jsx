@@ -48,7 +48,6 @@ class RouteMap extends React.Component {
        this.path = this.poly.getPath();
       // //  // Because path is an MVCArray, we can simply append a new coordinate
       // //  // and it will automatically appear.
-      debugger
       if (event.latLng){
        this.path.push(event.latLng);
       }
@@ -58,7 +57,6 @@ class RouteMap extends React.Component {
         //  title: '#' + path.getLength(),
          map: this.map
        });
-      //  debugger
      }
 
   render() {
