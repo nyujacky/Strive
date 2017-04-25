@@ -1,0 +1,27 @@
+.create-map-navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 5;
+    height: 55px;
+    background-color: #F1F1F1;
+
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+    .nav-left{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      width: 50%;
+      align-items: center;
+
+    }
+  .route-save-button{
+    margin: 5px 20px 5px 0;
+    width: 60px;
+    background-color: orange;
+    border: none;
+    color: white;
+    font-size: 14px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
 // import DashboardContainer from './dashboard_container';
 
@@ -12,9 +12,11 @@ class Dashboard extends React.Component{
         <div className = "home-page-nav-links">
           <Link to="/dashboard" className = "home-page-logo">STRIVE</Link>
           <div className = "home-page-dropdown">
-            <button className = "dashboard-links"> Dashboard </button>
-            <div>
-              <Link to= "/routes" > Route Index</Link>
+            <div className = "dashboard-container">
+              <button onClick ={()=> hashHistory.push("/dashboard")} className = "dashboard-links"> Dashboard </button>
+              <div>
+                <Link to= "/routes">Routes</Link>
+              </div>
             </div>
             <button className = "workout-links"> Workouts </button>
             <button className = "explore-links"> Explore </button>

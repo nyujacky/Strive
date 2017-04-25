@@ -13,7 +13,16 @@ class RouteForm extends React.Component{
       <div className = "something">
         <div>
           <Dashboard/>
-
+          <div className = "create-map-navbar">
+            <div className = "nav-left">
+              <div className = "">
+                Strive Route Builder
+              </div>
+            </div>
+            <button className = "route-save-button">
+              Save
+            </button>
+          </div>
         </div>
 
         <div className = "map-container">
@@ -27,4 +36,4 @@ class RouteForm extends React.Component{
   }
 }
 
-export default RouteForm
+export default RouteForm;

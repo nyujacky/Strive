@@ -10,6 +10,7 @@
   position: relative;
   background-color: white;
   z-index: 2;
+  border-bottom: 1px solid #e2e2e2;
 }
 .home-page-dropdown{
   // cursor: pointer;
@@ -29,6 +30,7 @@
   padding: 10px;
 }
 
+
 .home-page-dropdown{
   display: flex;
 }
@@ -36,12 +38,52 @@
 
 .home-page-nav-links button{
   display: flex;
-  margin-left: 50px;
+  margin: 0 10px;
   cursor: pointer;
   border: none;
   background-color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
 .home-page-nav-links button::after{
   content: "\2304";
 
+}
+
+.dashboard-container{
+  position: relative;
+  button{
+    border: 1px solid transparent;
+  }
+  div{
+
+    display: none;
+    border: 1px solid green;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+  }
+}
+
+
+.dashboard-container:hover{
+
+  button{
+    padding: -1px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+
+
+  }
+  div{
+    display: block;
+    a{
+
+      text-decoration: none;
+    }
+  }
 }
