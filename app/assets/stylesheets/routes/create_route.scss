@@ -9,6 +9,7 @@
 
     box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
     .nav-left{
+      padding-left: 20px;
       display: flex;
       justify-content: flex-start;
       flex-direction: row;
@@ -23,5 +24,69 @@
     // border: none;
     color: white;
     font-size: 14px;
+  }
+}
+
+.ReactModalPortal{
+
+
+  z-index: 50;
+
+  position: absolute;
+  .ReactModal__Overlay{
+      background-color: rgba(21, 19, 19, 0.74902) !important;
+  }
+
+
+  .modal-box{
+    position: absolute;
+    border: 1px solid green;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -300px;
+    width: 600px;
+    height: 400px;
+    z-index: 51;
+    background: rgba(255,255,255,0.95);
+    .create-route-modal-title{
+      font-size: 30px;
+      vertical-align: center;
+      height: 36px;
+      padding: 15px 20px;
+    }
+    .create-route-form{
+      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+    input{
+      padding-left: 10px;
+      width: 500px;
+      height: 35px;
+      font-size: 14px;
+    }
+    textarea {
+      padding-left: 10px;
+      font-size: 14px;
+      width: 500px;
+      height: 50px;
+    }
+    div{
+      padding: 10px 0;
+      font-size: 13px;
+    }
+    button{
+      border: 1px solid #ccc;
+      font-size: 14px;
+      padding: 10px;
+      .cancel-button{
+        background-color: white;
+      }
+      .save-button{
+
+      }
+    }
   }
 }

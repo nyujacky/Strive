@@ -1,22 +1,43 @@
 import React from 'react';
 import {Link} from 'react-router';
-import RouteFormContainer from './route_container';
+// import RouteFormContainer from './route_container';
 // import DashboardContainer from './dashboard_container';
 import Dashboard from "../dashboard";
 import RouteMap from "../../map/routemap";
-import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+// import {ModalContainer, ModalDialog} from 'react-modal-dialog';
+import Modal from 'react-modal';
+
 
 
 class RouteForm extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      isShowingModal: false
+      isShowingModal: false,
+      title: "",
+      description: "",
+      user_id: this.props.currentUserId,
+      routepolystring: ""
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updatePolyLine = this.updatePolyLine.bind(this);
+  }
+  handleSubmit(e){
+    // debugger
+    e.preventDefault();
+    this.props.createRoute(this.state);
   }
 
+  update(field) {
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+  }
+  updatePolyLine(string){
+    this.setState({routepolystring: string});
+  }
   handleClick(){
     this.setState({isShowingModal: true});
   }
@@ -25,6 +46,10 @@ class RouteForm extends React.Component{
 
     this.setState({isShowingModal: false});
   }
+
+  componentWillMount() {
+   Modal.setAppElement('body');
+ }
 
   render(){
     return(
@@ -45,24 +70,39 @@ class RouteForm extends React.Component{
 
         <div className = "map-container">
 
-          <RouteMap/>
+          <RouteMap updatePolyLine = {this.updatePolyLine}/>
         </div>
+        <Modal
+         className={'modal-box'}
+         isOpen={this.state.isShowingModal}
+         onRequestClose={this.handleClose}
+         contentLabel="SessionForm Modal">
+         <div className = "create-route-modal-title"> Save</div>
+         <form className = "create-route-form">
+           Enter a name and description for your route below. On the next page, you'll be able to see, edit, and share your route.
+            <div className = "title-field">
+              <label> Route Name (required) </label>
+              <input type = "text" className = "create-route-title" onChange = {this.update("title")}>
 
-        <div onClick={this.handleClick}>
-              {
-                this.state.isShowingModal &&
-                <ModalContainer onClose={this.handleClose}>
-                  <ModalDialog onClose={this.handleClose}>
-                    <h1>Dialog Content</h1>
-                    <form>
-                      <input>
-                        
-                      </input>
-                    </form>
-                  </ModalDialog>
-                </ModalContainer>
-              }
+              </input>
             </div>
+           <div className = "description-field">
+             <label> Description </label>
+             <textarea className = "create-route-description" onChange = {this.update("description")}>
+
+             </textarea>
+           </div>
+          <div className = "cancel-save-buttons">
+            <button className = "cancel-button">
+              Cancel
+            </button>
+            <button onClick = {this.handleSubmit} className = "save-button">
+              Save
+            </button>
+          </div>
+
+         </form>
+       </Modal>
       </div>
 
     );

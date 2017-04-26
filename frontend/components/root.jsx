@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import Dashboard from './dashboard/dashboard';
 import RouteForm from './dashboard/routes/route_form';
 import RouteIndex from './dashboard/routes/route_index';
+import RouteContainer from './dashboard/routes/route_container';
 // import RouteIndexContainer from './dashboard/routes/route_index_container';
 // import RouteContainer from './dashboard/routes/route_container';
 // import RouteShowContainer from './dashboard/routes/route_show_container';
@@ -39,7 +40,7 @@ const Root = ({store}) => {
         <Route path = "/dashboard" component = {Dashboard} />
         <Route path = "/routes" component = {RouteIndex}>
         </Route>
-        <Route path = "/routes/new" component = {RouteForm}/>
+        <Route path = "/routes/new" component = {RouteContainer}/>
 
 
       </Router>
