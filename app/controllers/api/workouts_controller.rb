@@ -1,22 +1,22 @@
 class Api::WorkoutsController < ApplicationController
   def index
-    @workouts = workout.all
+    @workouts = Workout.all
     render :index
   end
 
   def create
-    @workout = workout.new(workout_params);
+    @workout = Workout.new(workout_params);
     if @workout.save
       render :index
     end
   end
   def show
-    @workout = workout.find(params[:id])
+    @workout = Workout.find(params[:id])
     render :show
   end
 
   def update
-    @workout = workout.find(params[:id])
+    @workout = Workout.find(params[:id])
     if @workout.update(workout_params)
       render :show
     end
