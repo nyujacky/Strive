@@ -41,7 +41,7 @@ const Root = ({store}) => {
         <Route path = "/dashboard" component = {Dashboard} />
         <Route path = "/routes" component = {RouteIndex}>
         </Route>
-        <Route path = "/routes/new" component = {RouteForm}/>
+        <Route path = "/routes/new" component = {RouteContainer}/>
         <Route path = "/workouts" component = {WorkoutIndex}/>
 
 

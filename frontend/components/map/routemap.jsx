@@ -22,7 +22,8 @@ class RouteMap extends React.Component {
     this.addLatLng = this.addLatLng.bind(this);
     this.drawRoute = this.drawRoute.bind(this);
     this.state ={
-      currentpoly: ""
+      path: ""
+
     }
   }
   componentDidMount() {
@@ -55,12 +56,15 @@ class RouteMap extends React.Component {
   //
   // }
   addLatLng(event) {
-       this.path = this.poly.getPath();
+       this.state.path = this.poly.getPath();
+      //  debugger
       // //  // Because path is an MVCArray, we can simply append a new coordinate
       // //  // and it will automatically appear.
       if (event.latLng){
-       this.path.push(event.latLng);
+       this.state.path.push(event.latLng);
+       this.props.updatePolyLine(google.maps.geometry.encoding.encodePath(this.state.path));
       }
+
        // Add a new marker at the new plotted point on the polyline.
        var marker = new google.maps.Marker({
          position: event.latLng,
