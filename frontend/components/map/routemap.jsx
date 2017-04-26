@@ -45,7 +45,8 @@ class RouteMap extends React.Component {
     this.poly = new google.maps.Polyline({
           strokeColor: '#000000',
           strokeOpacity: 1.0,
-          strokeWeight: 3
+          strokeWeight: 3,
+          editable: true
         });
         this.poly.setMap(this.map);
   }
@@ -57,6 +58,9 @@ class RouteMap extends React.Component {
   //   }
   //
   // }
+  clearPolyline(){
+    this.poly.setMap(null);
+  }
   addLatLng(event) {
        this.state.path = this.poly.getPath();
       //  debugger
@@ -68,11 +72,11 @@ class RouteMap extends React.Component {
       }
 
        // Add a new marker at the new plotted point on the polyline.
-       var marker = new google.maps.Marker({
-         position: event.latLng,
-        //  title: '#' + path.getLength(),
-         map: this.map
-       });
+      //  var marker = new google.maps.Marker({
+      //    position: event.latLng,
+      //   //  title: '#' + path.getLength(),
+      //    map: this.map
+      //  });
      }
 
   render() {

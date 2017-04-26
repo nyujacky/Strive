@@ -15,7 +15,16 @@
       flex-direction: row;
       width: 50%;
       align-items: center;
-
+      .delete-route-button{
+        margin-left: 20px;
+        height: 55px;
+        width: 50px;
+        border: none;
+        background-color: #F1F1F1;
+      }
+      .delete-route-button:hover{
+        background-color: #ccc;
+      }
     }
   .route-save-button{
     margin: 5px 20px 5px 0;

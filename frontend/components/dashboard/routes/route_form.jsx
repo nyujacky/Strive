@@ -64,6 +64,11 @@ class RouteForm extends React.Component{
               <div className = "">
                 Strive Route Builder
               </div>
+              <div className = "create-map-buttons">
+                <button className = "delete-route-button">
+                  Clear
+                </button>
+              </div>
             </div>
             <button onClick={this.handleClick} className = "route-save-button">
               Save
