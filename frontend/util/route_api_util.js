@@ -1,8 +1,8 @@
 
-export const getRoutes = (route) => {
+export const getRoutes = (userId) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${route.user_id}/routes`
+    url: `api/users/${userId}/routes`
   });
 };
 export const getRoute = (route) => {

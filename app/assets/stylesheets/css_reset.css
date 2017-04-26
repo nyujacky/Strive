@@ -14,5 +14,5 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-style: inherit;
   font-size: 100%;
   font-family: Helvetica ;
-
+  list-style: none;
 }

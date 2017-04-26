@@ -8,7 +8,7 @@ import RouteForm from './dashboard/routes/route_form';
 import RouteIndex from './dashboard/routes/route_index';
 import RouteContainer from './dashboard/routes/route_container';
 import WorkoutIndex from './dashboard/workouts/workout_index';
-// import RouteIndexContainer from './dashboard/routes/route_index_container';
+import RouteIndexContainer from './dashboard/routes/route_index_container';
 // import RouteContainer from './dashboard/routes/route_container';
 // import RouteShowContainer from './dashboard/routes/route_show_container';
 // import Dashboard from './dashboard/dashboard';
@@ -39,7 +39,7 @@ const Root = ({store}) => {
         <Route path = "/login" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/signup" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/dashboard" component = {Dashboard} />
-        <Route path = "/routes" component = {RouteIndex}>
+        <Route path = "/routes" component = {RouteIndexContainer}>
         </Route>
         <Route path = "/routes/new" component = {RouteContainer}/>
         <Route path = "/workouts" component = {WorkoutIndex}/>
