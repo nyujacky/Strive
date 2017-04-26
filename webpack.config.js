@@ -1,5 +1,5 @@
 var path = require("path");
-  var Spinner = require('react-spinkit');
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/index.jsx",
