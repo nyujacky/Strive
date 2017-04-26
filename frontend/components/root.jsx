@@ -33,7 +33,8 @@ const Root = ({store}) => {
 
   const _redirectIfNotLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
-    if (!currentUser) {
+
+    if (currentUser === null) {
       replace('/');
       //Changed from "/" so that everything returns to dashboard if logged in
       //Change to "/" for testing so that you can log out
