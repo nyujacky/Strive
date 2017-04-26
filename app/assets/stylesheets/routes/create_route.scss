@@ -46,20 +46,23 @@
     // margin-top: -350px;
     // margin-left: -300px;
     -webkit-transform: translate(-50%, -50%);
-     -ms-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
-
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 600px;
     height: 400px;
     z-index: 51;
     background: rgba(255,255,255,0.95);
+    .cancel-save-buttons{
+      display: flex;
+      justify-content: flex-end;
+    }
     .create-route-modal-title{
       font-size: 30px;
       vertical-align: center;
       height: 36px;
       padding: 15px 20px;
     }
-    .create-route-form{
+    .create-route-modal-form{
       border-top: 1px solid #ccc;
       padding: 20px;
       font-size: 12px;
@@ -85,12 +88,15 @@
       border: 1px solid #ccc;
       font-size: 14px;
       padding: 10px;
-      .cancel-button{
-        background-color: white;
-      }
-      .save-button{
 
-      }
+    }
+    .cancel-button{
+      color: black;
+      background-color: white;
+    }
+    .save-button{
+      background-color: black;
+      color: white;
     }
   }
 }

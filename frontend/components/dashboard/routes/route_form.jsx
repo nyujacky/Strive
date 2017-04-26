@@ -77,8 +77,10 @@ class RouteForm extends React.Component{
          isOpen={this.state.isShowingModal}
          onRequestClose={this.handleClose}
          contentLabel="SessionForm Modal">
-         <div className = "create-route-modal-title"> Save</div>
-         <form className = "create-route-form">
+         <div className = "create-route-modal-title">
+           Save
+         </div>
+         <form className = "create-route-modal-form">
            Enter a name and description for your route below. On the next page, you'll be able to see, edit, and share your route.
             <div className = "title-field">
               <label> Route Name (required) </label>
@@ -93,7 +95,7 @@ class RouteForm extends React.Component{
              </textarea>
            </div>
           <div className = "cancel-save-buttons">
-            <button className = "cancel-button">
+            <button onClick = {this.handleClose}  className = "cancel-button">
               Cancel
             </button>
             <button className = "save-button">
