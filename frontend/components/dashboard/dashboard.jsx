@@ -18,7 +18,11 @@ class Dashboard extends React.Component{
                 <Link to= "/routes">Routes</Link>
               </div>
             </div>
-            <button className = "workout-links"> Workouts </button>
+            <div className = "workout-container">
+              <button onClick ={()=> hashHistory.push("/workouts")} className = "workout-links"> Workouts </button>
+            
+            </div>
+
             <button className = "explore-links"> Explore </button>
           </div>
 

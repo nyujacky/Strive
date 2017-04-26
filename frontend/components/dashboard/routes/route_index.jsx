@@ -10,12 +10,18 @@ class RouteIndex extends React.Component{
 
   render(){
     return(
-      <div className = "route-index-navbar">
+      <div className = "route-index-page">
         <div>
 
           <Dashboard />
         </div>
-        <Link to ="/routes/new"> New Route </Link>
+        <div className = "route-index-header">
+          
+            My Routes
+
+            <Link to ="/routes/new"> New Route </Link>
+
+        </div>
 
       </div>
     );
