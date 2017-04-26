@@ -27,8 +27,9 @@ class RouteForm extends React.Component{
     // debugger
     e.preventDefault();
     // debugger
-    this.props.createRoute(this.state);
-    hashHistory.push('/routes');
+    this.props.createRoute(this.state)
+      .then(()=> hashHistory.push('/routes'));
+
 
   }
 
@@ -82,13 +83,13 @@ class RouteForm extends React.Component{
          <div className = "create-route-modal-title">
            Save
          </div>
-         <form className = "create-route-modal-form">
+         <form onSubmit = {this.handleSubmit}  className = "create-route-modal-form">
            Enter a name and description for your route below. On the next page, you'll be able to see, edit, and share your route.
             <div className = "title-field">
               <label> Route Name (required) </label>
-              <input 
-                onChange = {this.update('title')}
+              <input required
                 type = "text"
+                onChange = {this.update('title')}
                 className = "create-route-title" >
 
               </input>
@@ -100,12 +101,12 @@ class RouteForm extends React.Component{
              </textarea>
            </div>
           <div className = "cancel-save-buttons">
-            <button onClick = {this.handleClose}  className = "cancel-button">
+            <button type = "submit" onClick = {this.handleClose}  className = "cancel-button">
               Cancel
             </button>
-            <button onClick = {this.handleSubmit} className = "save-button">
-              Save
-            </button>
+            <input type = "submit" className = "save-button" value = "Save"/>
+
+
           </div>
 
          </form>
