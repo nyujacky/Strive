@@ -21,23 +21,23 @@ class RouteForm extends React.Component{
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.updatePolyLine = this.updatePolyLine.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.updatePolyLine = this.updatePolyLine.bind(this);
   }
-  handleSubmit(e){
-    // debugger
-    e.preventDefault();
-    this.props.createRoute(this.state);
-  }
+  // handleSubmit(e){
+  //   // debugger
+  //   e.preventDefault();
+  //   this.props.createRoute(this.state);
+  // }
 
-  update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-  }
-  updatePolyLine(string){
-    this.setState({routepolystring: string});
-  }
+  // update(field) {
+  //       return e => this.setState({
+  //           [field]: e.currentTarget.value
+  //       });
+  // }
+  // updatePolyLine(string){
+  //   this.setState({routepolystring: string});
+  // }
   handleClick(){
     this.setState({isShowingModal: true});
   }
@@ -70,7 +70,7 @@ class RouteForm extends React.Component{
 
         <div className = "map-container">
 
-          <RouteMap updatePolyLine = {this.updatePolyLine}/>
+          <RouteMap />
         </div>
         <Modal
          className={'modal-box'}
@@ -82,13 +82,13 @@ class RouteForm extends React.Component{
            Enter a name and description for your route below. On the next page, you'll be able to see, edit, and share your route.
             <div className = "title-field">
               <label> Route Name (required) </label>
-              <input type = "text" className = "create-route-title" onChange = {this.update("title")}>
+              <input type = "text" className = "create-route-title" >
 
               </input>
             </div>
            <div className = "description-field">
              <label> Description </label>
-             <textarea className = "create-route-description" onChange = {this.update("description")}>
+             <textarea className = "create-route-description" >
 
              </textarea>
            </div>
@@ -96,7 +96,7 @@ class RouteForm extends React.Component{
             <button className = "cancel-button">
               Cancel
             </button>
-            <button onClick = {this.handleSubmit} className = "save-button">
+            <button className = "save-button">
               Save
             </button>
           </div>
@@ -108,5 +108,10 @@ class RouteForm extends React.Component{
     );
   }
 }
-
 export default RouteForm;
+
+
+
+// <button onClick = {this.handleSubmit} className = "save-button">
+//   Save
+// </button>

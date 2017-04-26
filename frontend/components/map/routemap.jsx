@@ -46,14 +46,14 @@ class RouteMap extends React.Component {
         });
         this.poly.setMap(this.map);
   }
-  componentDidUpdate(){
-    if(this.state.currentpoly != this.path){
-      this.setState({currentpoly: this.path});
-      this.props.updatePolyLine(this.path);
-
-    }
-
-  }
+  // componentDidUpdate(){
+  //   if(this.state.currentpoly != this.path){
+  //     this.setState({currentpoly: this.path});
+  //     this.props.updatePolyLine(this.path);
+  //
+  //   }
+  //
+  // }
   addLatLng(event) {
        this.path = this.poly.getPath();
       // //  // Because path is an MVCArray, we can simply append a new coordinate
