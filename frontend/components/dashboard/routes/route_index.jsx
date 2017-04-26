@@ -26,20 +26,14 @@ class RouteIndex extends React.Component{
 );
     }
     else{
-      // debugger
+
         displayRoutes = (
         <ul className = "route-index-list">
-          {Object.values(this.props.routes).map(route => <li key = {route.id}>{route.id }</li>)}
+          {Object.values(this.props.routes).map(route => <div key = {route.id}>{route.id }</div>)}
         </ul>);
     }
 
 
-    // if (this.props.routes.route === null){
-    //   return <div>Loading</div>
-    // }else{
-    //
-    // }
-    // debugger
     return(
       <div className = "route-index-page">
         <div>
