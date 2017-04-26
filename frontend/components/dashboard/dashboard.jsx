@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, hashHistory} from 'react-router';
+import {Link, hashHistory, withRouter } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
 // import DashboardContainer from './dashboard_container';
 
@@ -7,7 +7,14 @@ import GreetingContainer from '../greeting/greeting_container';
 class Dashboard extends React.Component{
 
   render(){
+    let filler;
+    if (this.props.location.pathname === "/dashboard"){
+      filler = (<div className = "main-content"></div>);
+    }else{
+      filler = null;
+    }
     return(
+      <div>
       <div className = "home-page-nav-bar">
         <div className = "home-page-nav-links">
           <Link to="/dashboard" className = "home-page-logo">STRIVE</Link>
@@ -20,7 +27,7 @@ class Dashboard extends React.Component{
             </div>
             <div className = "workout-container">
               <button onClick ={()=> hashHistory.push("/workouts")} className = "workout-links"> Workouts </button>
-            
+
             </div>
 
             <button className = "explore-links"> Explore </button>
@@ -30,10 +37,11 @@ class Dashboard extends React.Component{
         <div className = "dashboard-logout">
           <GreetingContainer />
         </div>
-
       </div>
+      {filler}
+    </div>
     );
   }
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

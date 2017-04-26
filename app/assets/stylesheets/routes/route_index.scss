@@ -14,15 +14,18 @@
   }
 }
 .route-index-list{
-  margin-left: 60px;
+  // margin-left: 60px;
+  width: 400px;
   padding: 20px;
   div{
-    margin: 20px 0;
+    // margin: 20px 0;
     border: 1px solid black;
-    height: 100px;
+    // height: 100px;
     width: 400px;
+    margin-bottom: 20px;
     li{
-      padding: 10px;
+      // padding: 10px;
+      margin: 10px;
     }
   }
 }

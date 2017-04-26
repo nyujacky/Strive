@@ -16,7 +16,7 @@
       width: 50%;
       align-items: center;
       .delete-route-button{
-        margin-left: 20px;
+        margin-left: 40px;
         height: 55px;
         width: 50px;
         border: none;
@@ -24,6 +24,8 @@
       }
       .delete-route-button:hover{
         background-color: #ccc;
+        transition: .5s;
+        cursor: pointer;
       }
     }
   .route-save-button{
