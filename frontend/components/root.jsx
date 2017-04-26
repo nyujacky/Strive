@@ -61,11 +61,4 @@ const Root = ({store}) => {
 
 }
 
-// <Route path = "/dashboard" component = {Dashboard}>
-//   <Route path = "/dashboard/routes" component = {RouteIndexContainer}>
-//     <Route path = "dashboard/routes/new" component = {RouteContainer}/>
-//     <Route path = "/dashboard/routes/:routeId" component = {RouteShowContainer}/>
-//     <Route path = "/dashboard/routes/:routeId/edit" component = {RouteContainer}/>
-//   </Route>
-// </Route>
 export default Root;
