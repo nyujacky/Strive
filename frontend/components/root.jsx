@@ -31,6 +31,15 @@ const Root = ({store}) => {
     }
   }
 
+  const _redirectIfNotLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/');
+      //Changed from "/" so that everything returns to dashboard if logged in
+      //Change to "/" for testing so that you can log out
+    }
+  }
+
   return (
     <Provider store = { store} >
       <Router history = {hashHistory}>
@@ -38,11 +47,11 @@ const Root = ({store}) => {
         </Route>
         <Route path = "/login" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
         <Route path = "/signup" component = {SessionFormContainer} onEnter = {_redirectIfLoggedIn}/>
-        <Route path = "/dashboard" component = {Dashboard} />
-        <Route path = "/routes" component = {RouteIndexContainer}>
+        <Route path = "/dashboard" component = {Dashboard}  onEnter = {_redirectIfNotLoggedIn}/>
+        <Route path = "/routes" component = {RouteIndexContainer} onEnter = {_redirectIfNotLoggedIn}>
         </Route>
-        <Route path = "/routes/new" component = {RouteContainer}/>
-        <Route path = "/workouts" component = {WorkoutIndex}/>
+        <Route path = "/routes/new" component = {RouteContainer} onEnter = {_redirectIfNotLoggedIn}/>
+        <Route path = "/workouts" component = {WorkoutIndex} onEnter = {_redirectIfNotLoggedIn}/>
 
 
       </Router>
