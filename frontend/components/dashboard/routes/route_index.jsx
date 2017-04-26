@@ -11,7 +11,6 @@ class RouteIndex extends React.Component{
     this.props.requestRoutes(currentUser.id);
   }
 
-
   render(){
     // debugger
     // var Spinner = require('react-spinkit');
@@ -29,7 +28,13 @@ class RouteIndex extends React.Component{
 
         displayRoutes = (
         <ul className = "route-index-list">
-          {Object.values(this.props.routes).map(route => <div key = {route.id}>{route.id }</div>)}
+          {Object.values(this.props.routes).map(route => <div key = {route.id}>
+            <li>{route.id}</li>
+            <li>{route.description}</li>
+            <li>{route.duration}</li>
+            <li>{route.distance}</li>
+            <li>{route.elevation}</li>
+          </div>)}
         </ul>);
     }
 

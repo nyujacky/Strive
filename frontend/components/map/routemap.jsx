@@ -13,7 +13,8 @@ const _getCoordsObj = latLng => {
 
 let _mapOptions = {
   center: {lat: 40.746468, lng: -73.988546}, //Manhattan coords
-  zoom: 13
+  zoom: 13,
+  clickableIcons: false
 };
 class RouteMap extends React.Component {
   //...
@@ -30,7 +31,8 @@ class RouteMap extends React.Component {
     // set the map to show SF
     const mapOptions = {
       center: { lat: 40.746468, lng: -73.988546 }, // this is SF
-      zoom: 13
+      zoom: 13,
+      clickableIcons: false
     };
 
     // wrap the mapDOMNode in a Google Map

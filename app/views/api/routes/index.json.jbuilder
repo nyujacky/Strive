@@ -7,5 +7,5 @@ json.array! @routes do |route|
   json.duration route.duration
   json.elevation route.elevation
   json.routepolystring route.routepolystring
-
+  json.description route.description
 end

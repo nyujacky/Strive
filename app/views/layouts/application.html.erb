@@ -3,7 +3,8 @@
   <head>
     <title>Strive</title>
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbEVIVr_48n260pkJX4du2gVeKeiOYczg" %>
+
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS']}" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

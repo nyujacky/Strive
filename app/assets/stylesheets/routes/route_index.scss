@@ -14,6 +14,15 @@
   }
 }
 .route-index-list{
+  margin-left: 60px;
   padding: 20px;
-  
+  div{
+    margin: 20px 0;
+    border: 1px solid black;
+    height: 100px;
+    width: 400px;
+    li{
+      padding: 10px;
+    }
+  }
 }
