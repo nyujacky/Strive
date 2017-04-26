@@ -86,7 +86,10 @@ class RouteForm extends React.Component{
            Enter a name and description for your route below. On the next page, you'll be able to see, edit, and share your route.
             <div className = "title-field">
               <label> Route Name (required) </label>
-              <input onChange = {this.update('title')} type = "text" className = "create-route-title" >
+              <input 
+                onChange = {this.update('title')}
+                type = "text"
+                className = "create-route-title" >
 
               </input>
             </div>
