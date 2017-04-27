@@ -10,7 +10,16 @@ class RouteIndex extends React.Component{
     // debugger
     this.props.requestRoutes(this.props.currentUser.id);
   }
-
+  renderMap(route){
+    let smallMap;
+    if(route.routepolystring){
+        smallMap = (<img src = {`https://maps.googleapis.com/maps/api/staticmap?size=100x100&scale=2&zoom=11&path=weight:3%7Ccolor:green%7Cenc:${route.routepolystring}&key=AIzaSyCYSZguOomYKJj6YrPhOTETA7CwEl22N4g`}></img>);
+      }
+      else{
+        smallMap = null;
+      }
+      return smallMap;
+    }
   render(){
     // debugger
     // var Spinner = require('react-spinkit');
@@ -28,15 +37,14 @@ class RouteIndex extends React.Component{
 
         displayRoutes = (
         <ul className = "route-index-list">
-          {Object.values(this.props.routes).map(route => <div key = {route.id}>
-            <li>{route.id}</li>
-            <li>{route.description}</li>
-            <li>{route.duration}</li>
-            <li>{route.distance}</li>
-            <li>{route.elevation}</li>
-            <li>Hello</li>
-          </div>
-        )
+          {Object.values(this.props.routes).map(route =>
+            <div key = {route.id}>
+              <li>{this.renderMap(route)}</li>
+              <li>{route.id}</li>
+              <li>{route.description}</li>
+              
+            </div>
+            )
           }
         </ul>);
     }

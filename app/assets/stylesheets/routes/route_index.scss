@@ -19,15 +19,21 @@
 }
 .route-index-list{
   // margin-left: 60px;
-  width: 400px;
-  padding: 20px 80px;
+  display: flex;
+  flex-wrap: wrap;
   div{
     // margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid black;
     // height: 100px;
-    width: 400px;
+    margin: 20px;
+    width: 250px;
     margin-bottom: 20px;
     li{
+      display: flex;
+      justify-content: center;
       // padding: 10px;
       margin: 10px;
     }
