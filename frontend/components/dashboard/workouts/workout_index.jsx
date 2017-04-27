@@ -25,7 +25,7 @@ class WorkoutIndex extends React.Component{
 
         displayWorkouts = (
         <ul className = "workout-index-list">
-          {Object.values(this.props.workouts).map(workout => <div key = {workout.id}>
+          {Object.values(this.props.workouts).map(workout => <div className = "workout-item" key = {workout.id}>
             <li>{workout.id}</li>
             <li>Hello</li>
           </div>
@@ -41,11 +41,14 @@ class WorkoutIndex extends React.Component{
           <Dashboard />
         </div>
         <div className = "workout-index-navbar">
+          <div className = "workout-index-container">
             <div className = "workout-index-header">
 
               My Workouts
               <Link to ="/workouts/new"> New Workout </Link>
             </div>
+            {displayWorkouts}
+          </div>
             <div className = "workout-totals">
               <div className = "workout-total-header">
                 Workout Totals

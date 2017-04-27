@@ -13,14 +13,16 @@ class WorkoutForm extends React.Component{
       user_id: this.props.currentUserId,
       route_id: null
     };
-
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e){
     // debugger
     e.preventDefault();
     // debugger
-    this.props.createRoute(this.state)
+    this.props.createWorkout(this.state)
       .then(()=> hashHistory.push('/workouts'));
 
 
@@ -46,36 +48,37 @@ class WorkoutForm extends React.Component{
 
   render(){
     return(
-      <div className = "create-workout-container">
+      <div className = "create-workout-page">
         <div>
+
           <Dashboard/>
-        </div>
-        <div className = "create-workout-form">
-          <form onSubmit = {this.handleSubmit} className = "add-route-form" >
-            <div className = "workout-title-field">
-              <label> Route Name (required) </label>
-              <input required
-                type = "text"
-                onChange = {this.update('title')}
-                className = "create-route-title" >
+        <div className = "create-workout-container">
+          <div className = "create-workout-form">
+            <div className = "workout-name-description">
+              <form onSubmit = {this.handleSubmit} className = "add-workout-form" >
+                <div className = "workout-title-field">
+                  <label> Workout Title (required) </label>
+                  <input required
+                    type = "text"
+                    onChange = {this.update('title')}
+                    className = "create-workout-title" >
 
-              </input>
+                  </input>
+                </div>
+               <div className = "workout-description-field">
+                 <label> Description </label>
+                 <textarea onChange = {this.update('description')}className = "create-workout-description" >
+
+                 </textarea>
+               </div>
+               <div className = "cancel-save-buttons">
+                 <input type = "submit" className = "save-button" value = "Save"/>
+
+
+               </div>
+              </form>
             </div>
-           <div className = "workout-description-field">
-             <label> Description </label>
-             <textarea onChange = {this.update('description')}className = "create-route-description" >
-
-             </textarea>
-           </div>
-           <div className = "cancel-save-buttons">
-             <button type = "submit" onClick = {this.handleClose}  className = "cancel-button">
-               Cancel
-             </button>
-             <input type = "submit" className = "save-button" value = "Save"/>
-
-
-           </div>
-          </form>
+          </div>
         </div>
 
 
@@ -87,6 +90,7 @@ class WorkoutForm extends React.Component{
            contentLabel="SessionForm Modal">
 
           </Modal>
+        </div>
       </div>
     );
   }
@@ -95,3 +99,8 @@ class WorkoutForm extends React.Component{
 }
 
 export default WorkoutForm;
+
+
+// <button type = "submit" onClick = {this.handleClose}  className = "cancel-button">
+//   Cancel
+// </button>

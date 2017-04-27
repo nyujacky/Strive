@@ -1,0 +1,46 @@
+.create-workout-form{
+  display: flex;
+  // justify-content: space-between;
+  padding: 20px;
+  width: 500px;
+  .cancel-save-buttons{
+    display: flex;
+    justify-content: flex-end;
+    input{
+      border: 1px solid #ccc;
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  .create-workout-title{
+    padding-left: 10px;
+    width: 500px;
+    height: 35px;
+    font-size: 14px;
+  }
+  .workout-description-field{
+    textarea {
+      padding-left: 10px;
+      font-size: 14px;
+      width: 500px;
+      height: 50px;
+    }
+  }
+  button{
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 10px;
+
+  }
+  div{
+    padding: 10px 0;
+  }
+  .cancel-button{
+    color: black;
+    background-color: white;
+  }
+  .save-button{
+    background-color: black;
+    color: white;
+  }
+}
