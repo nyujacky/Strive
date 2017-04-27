@@ -10,5 +10,5 @@ export const receiveWorkout = (workout) => {
   return {
     type: RECEIVE_WORKOUT,
     workout
-  }
+  };
 };
