@@ -44,7 +44,7 @@ class WorkoutIndex extends React.Component{
             <div className = "workout-index-header">
 
               My Workouts
-              <Link to ="/workout/new"> New Workout </Link>
+              <Link to ="/workouts/new"> New Workout </Link>
             </div>
             <div className = "workout-totals">
               <div className = "workout-total-header">

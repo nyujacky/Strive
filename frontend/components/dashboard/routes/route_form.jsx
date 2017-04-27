@@ -6,8 +6,6 @@ import RouteMap from "../../map/routemap";
 // import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import Modal from 'react-modal';
 
-
-
 class RouteForm extends React.Component{
   constructor(props){
     super(props)

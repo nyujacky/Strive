@@ -5,13 +5,14 @@ import Modal from 'react-modal';
 
 class WorkoutForm extends React.Component{
   constructor(props){
+    super(props);
     this.state = {
-      isShowingModal: false;
+      isShowingModal: false,
       title: "",
       description: "",
       user_id: this.props.currentUserId,
       route_id: null
-    }
+    };
 
   }
 
@@ -50,7 +51,7 @@ class WorkoutForm extends React.Component{
           <Dashboard/>
         </div>
         <div className = "create-workout-form">
-          <form onSubmit = {this.handleSubmit className = "add-route-form" }>
+          <form onSubmit = {this.handleSubmit} className = "add-route-form" >
             <div className = "workout-title-field">
               <label> Route Name (required) </label>
               <input required
@@ -91,6 +92,6 @@ class WorkoutForm extends React.Component{
   }
 
 
-
-
 }
+
+export default WorkoutForm;

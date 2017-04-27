@@ -9,7 +9,8 @@ import RouteIndex from './dashboard/routes/route_index';
 import RouteContainer from './dashboard/routes/route_container';
 import WorkoutIndex from './dashboard/workouts/workout_index';
 import RouteIndexContainer from './dashboard/routes/route_index_container';
-import WorkoutContainer from './dashboard/workouts/workout_index_container';
+import WorkoutIndexContainer from './dashboard/workouts/workout_index_container';
+import WorkoutContainer from './dashboard/workouts/workout_container';
 
 // import RouteContainer from './dashboard/routes/route_container';
 // import RouteShowContainer from './dashboard/routes/route_show_container';
@@ -54,7 +55,8 @@ const Root = ({store}) => {
         <Route path = "/routes" component = {RouteIndexContainer} onEnter = {_redirectIfNotLoggedIn}>
         </Route>
         <Route path = "/routes/new" component = {RouteContainer} onEnter = {_redirectIfNotLoggedIn}/>
-        <Route path = "/workouts" component = {WorkoutContainer} onEnter = {_redirectIfNotLoggedIn}/>
+        <Route path = "/workouts" component = {WorkoutIndexContainer} onEnter = {_redirectIfNotLoggedIn}/>
+        <Route path = "/workouts/new" component = {WorkoutContainer} onEnter = {_redirectIfNotLoggedIn}/>
 
       </Router>
     </Provider>
