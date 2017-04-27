@@ -19,15 +19,17 @@ class Dashboard extends React.Component{
         <div className = "home-page-nav-links">
           <Link to="/dashboard" className = "home-page-logo">STRIVE</Link>
           <div className = "home-page-dropdown">
-            <div className = "dashboard-container">
+            <div className = "dashboard-container link-container">
               <button onClick ={()=> hashHistory.push("/dashboard")} className = "dashboard-links"> Dashboard </button>
-              <div className = "dashboard-link-div">
+              <div className = "dashboard-link-div button-link-div">
                 <button onClick ={()=> hashHistory.push("/routes")} className = "route-link"> My Routes </button>
               </div>
             </div>
-            <div className = "workout-container">
+            <div className = "workout-container link-container">
               <button onClick ={()=> hashHistory.push("/workouts")} className = "workout-links"> Workouts </button>
-
+              <div className = "workout-link-div button-link-div">
+                <button onClick ={()=> hashHistory.push("/workouts")} className = "workout-links"> My Workouts </button>
+              </div>
             </div>
             <div className = "explore-container">
               <button className = "explore-links"> Explore </button>

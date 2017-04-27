@@ -59,12 +59,12 @@
 }
 
 
-.dashboard-container{
+.link-container{
   position: relative;
   // height: 35px;
   // padding: 10px 0;
 
-  .dashboard-link-div{
+  .button-link-div{
 
     display: none;
     flex-direction: column;
@@ -84,7 +84,7 @@
     }
 
   }
-  .dashboard-link-div > button {
+  .button-link-div > button {
     position: relative;
     border: 0 !important;
     padding: 0px 5px;
@@ -94,7 +94,7 @@
   }
 }
 
-.dashboard-container:hover{
+.link-container:hover{
 
   button{
     padding: -1px;
@@ -104,7 +104,7 @@
     border-bottom: 1px solid red;
 
   }
-  .dashboard-link-div{
+  .button-link-div{
     display: flex;
     button{
       // border: 1px solid green !important;
