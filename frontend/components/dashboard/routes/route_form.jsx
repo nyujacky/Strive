@@ -56,7 +56,7 @@ class RouteForm extends React.Component{
 
   render(){
     return(
-      <div className = "something">
+      <div className = "create-map-container">
         <div>
           <Dashboard/>
           <div className = "create-map-navbar">
