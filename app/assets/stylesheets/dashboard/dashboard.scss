@@ -10,6 +10,7 @@
   position: relative;
   background-color: white;
   z-index: 2;
+  height: 55px;
   border-bottom: 1px solid #e2e2e2;
 }
 .home-page-dropdown{
@@ -29,12 +30,17 @@
 .home-page-nav-links {
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 
 
 .home-page-dropdown{
   display: flex;
+  align-items: center;
+  div{
+    display: flex;
+    height: 55px;
+
+  }
 }
 
 
@@ -42,37 +48,51 @@
   display: flex;
   margin: 0 10px;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   background-color: white;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 15px;
+
 }
 .home-page-nav-links button::after{
   content: "\2304";
 
 }
 
+
 .dashboard-container{
   position: relative;
   // height: 35px;
   // padding: 10px 0;
-  button{
-    border: 1px solid transparent;
 
-  }
-  div{
+  .dashboard-link-div{
 
     display: none;
-    border: 1px solid green;
+    flex-direction: column;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     position: absolute;
     left: 10px;
-    top: 0px;
-    width: 100px;
+    top: 56px;
+    width: 150px;
+    height: auto;
+
+    // margin-top: 20px;
+
+    button::after{
+      content: none;
+    }
+
+  }
+  .dashboard-link-div > button {
+    position: relative;
+    border: 0 !important;
+    padding: 0px 5px;
+    margin: 0;
     height: 50px;
-    margin-top: 20px;
+
   }
 }
-
 
 .dashboard-container:hover{
 
@@ -81,17 +101,22 @@
     border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
     border-left: 1px solid #ccc;
-
+    border-bottom: 1px solid red;
 
   }
-  div{
-    display: block;
-    a{
+  .dashboard-link-div{
+    display: flex;
+    button{
+      // border: 1px solid green !important;
 
-      text-decoration: none;
+    }
+    button:hover{
+      width: 100%;
+      background-color: #e5e5e5;
     }
   }
 }
+
 
 .main-content{
   height:1000px;

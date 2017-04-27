@@ -32,8 +32,8 @@
           animation-duration: 1.05s;
 }
 .loader {
-  position: absolute;
-  top: 25%;
+  position: relative;
+  top: 13%;
   left: 13%;
   margin: -90px 0 0 -90px;
 }

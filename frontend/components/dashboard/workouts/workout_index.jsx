@@ -13,6 +13,9 @@ class WorkoutIndex extends React.Component{
   componentWillUpdate(newProps){
     // debugger
   }
+  // getWorkoutTotal(){
+  //   this.props.requestRoutes();
+  // }
   render(){
     let displayWorkouts;
     // debugger

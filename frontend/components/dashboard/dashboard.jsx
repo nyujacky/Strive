@@ -21,16 +21,17 @@ class Dashboard extends React.Component{
           <div className = "home-page-dropdown">
             <div className = "dashboard-container">
               <button onClick ={()=> hashHistory.push("/dashboard")} className = "dashboard-links"> Dashboard </button>
-              <div>
-                <Link to= "/routes">Routes</Link>
+              <div className = "dashboard-link-div">
+                <button onClick ={()=> hashHistory.push("/routes")} className = "route-link"> My Routes </button>
               </div>
             </div>
             <div className = "workout-container">
               <button onClick ={()=> hashHistory.push("/workouts")} className = "workout-links"> Workouts </button>
 
             </div>
-
-            <button className = "explore-links"> Explore </button>
+            <div className = "explore-container">
+              <button className = "explore-links"> Explore </button>
+            </div>
           </div>
 
         </div>
@@ -45,3 +46,10 @@ class Dashboard extends React.Component{
 }
 
 export default withRouter(Dashboard);
+
+
+
+
+
+
+// <Link to= "/routes">Routes</Link>
