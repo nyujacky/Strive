@@ -31,10 +31,15 @@
   .route-save-button{
     margin: 5px 20px 5px 0;
     width: 60px;
-    background-color: orange;
+    background-color: #FF4500;
     // border: none;
     color: white;
     font-size: 14px;
+    border-style: none;
+  }
+  .route-save-button:hover{
+    background-color: #b16448;
+    cursor: pointer;
   }
 }
 
