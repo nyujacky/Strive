@@ -8,7 +8,7 @@ const mapStateToProps = state =>{
   if (state.route === null){
     myroutes = 0;
   }else{
-    myroutes = state.route
+    myroutes = state.route;
   }
   // debugger
   return{routes: myroutes,

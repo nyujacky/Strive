@@ -3,13 +3,15 @@ import {requestWorkouts} from '../../../actions/workout_actions';
 import WorkoutIndex from './workout_index';
 
 const mapStateToProps = state => {
+  // debugger
   let myworkouts;
   if (state.workouts === null){
-    myworkouts = 0
+    myworkouts = 0;
   }else{
-    myworkouts = state.workout
+    myworkouts = state.workout;
   }
-  return {workouts: myworkouts};
+  return {workouts: myworkouts,
+  currentUser: state.session.currentUser};
 };
 
 const mapDispatchToProps = dispatch => {

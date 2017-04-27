@@ -6,8 +6,34 @@ import Dashboard from '../dashboard';
 // import DashboardContainer from './dashboard_container';
 
 class WorkoutIndex extends React.Component{
-
+  componentWillMount(){
+    // debugger
+    this.props.requestWorkouts(this.props.currentUser.id);
+  }
   render(){
+    let displayWorkouts;
+    if (this.props.workouts.workout === null) {
+      // displayWorkouts = (<div id="spinner"></div>);
+      displayWorkouts = (<div className="loader">
+                      <div className="circle one"></div>
+                      <div className="circle two"></div>
+                      <div className="circle three"></div>
+                      </div>
+                    );
+    }
+    else{
+
+        displayWorkouts = (
+        <ul className = "workout-index-list">
+          {Object.values(this.props.workouts).map(workout => <div key = {workout.id}>
+            <li>{workout.id}</li>
+            <li>Hello</li>
+          </div>
+        )
+          }
+        </ul>);
+    }
+
     return(
       <div className = "workout-index">
         <div>
