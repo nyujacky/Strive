@@ -11,7 +11,8 @@ const mapStateToProps = state =>{
     myroutes = state.route
   }
   // debugger
-  return{routes: myroutes};
+  return{routes: myroutes,
+  currentUser: state.session.currentUser};
 };
 const mapDispatchToProps = dispatch => {
   return {

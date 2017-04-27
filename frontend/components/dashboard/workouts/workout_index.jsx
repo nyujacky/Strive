@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router';
-// import WorkoutIndexContainer from './workout_index_container';
 import GreetingContainer from '../../greeting/greeting_container';
 import Dashboard from '../dashboard';
 
@@ -26,7 +25,7 @@ class WorkoutIndex extends React.Component{
                 Workout Totals
               </div>
               <div className = "workout-total-container">
-                
+
               </div>
             </div>
 

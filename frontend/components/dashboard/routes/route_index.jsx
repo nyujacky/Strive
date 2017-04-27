@@ -8,7 +8,7 @@ import Dashboard from '../dashboard';
 class RouteIndex extends React.Component{
   componentWillMount(){
     // debugger
-    this.props.requestRoutes(currentUser.id);
+    this.props.requestRoutes(this.props.currentUser.id);
   }
 
   render(){
@@ -22,7 +22,7 @@ class RouteIndex extends React.Component{
                       <div className="circle two"></div>
                       <div className="circle three"></div>
                       </div>
-);
+                    );
     }
     else{
 
