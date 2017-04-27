@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {createRoute} from '../../../actions/route_actions';
 import RouteForm from './route_form';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 
   return({
     // route: state.routes[ownProps.params.routeId],
