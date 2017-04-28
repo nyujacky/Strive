@@ -3,7 +3,7 @@ import { Link,hashHistory} from 'react-router';
 
 const sessionLinks = () => (
   <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
+    <Link to="/login" activeClassName="current">LOG IN</Link>
   </nav>
 );
 
@@ -11,7 +11,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => {
   // const redirectIfLoggedOut = () => {
-  //   
+  //
   //   logout.then(hashHistory.push('/'));
   // };
   const handleLogout = (e) =>{

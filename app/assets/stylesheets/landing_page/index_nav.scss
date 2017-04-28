@@ -5,8 +5,9 @@
 }
 .index-nav{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  height: 100px;
 }
 
 .index-content{
@@ -24,15 +25,29 @@
   font-size: 24px;
   color: #FF4500;
   font-weight: bolder;
-  margin-left: 20px;
+  margin: 0 300px;
   font-family: 'LemonMilk';
 }
 
+.login-signup {
+  margin: 0 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
 .login-signup a{
+  display: flex;
   margin-right: 20px;
+  background-color: #FF4500;
   text-decoration: none;
   font-size: 16px;
-  color: #666;
-  padding: 5px;
+  color: white;
+  padding: 10px;
   border: 1px solid #D3D3D3;
+  height: 40px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+
 }
