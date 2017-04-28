@@ -62,7 +62,8 @@ class WorkoutIndex extends React.Component{
                 Workout Totals
               </div>
               <div className = "workout-total-container">
-
+                <label>Total Distance: </label>
+                <div></div>
               </div>
             </div>
 

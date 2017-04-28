@@ -1,0 +1,51 @@
+/* -------------------- Page Styles (not required) */
+// div { margin: 20px; }
+
+/* -------------------- Select Box Styles: bavotasan.com Method (with special adaptations by ericrasch.com) */
+/* -------------------- Source: http://bavotasan.com/2011/style-select-box-using-only-css/ */
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 50%;
+  //  background-size:
+  //  height: 29px;
+   overflow: hidden;
+   width: 240px;
+   :focus{
+    outline: 0;
+   }
+}
+
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 0 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+
+}
+
+
+
+
+.semi-square {
+  //  -webkit-border-radius: 5px;
+  //  -moz-border-radius: 5px;
+  //  border-radius: 5px;
+}
+
+
+// .blue    { background-color: #3b8ec2; }
+.blue    { background-color: #FF4500; }
+
+
+
+.blue select    { color: #fff; }
+
+
+
+/*
+
+
+/* -------------------- Select Box Styles: stackoverflow.com Method */
+/* -------------------- Source: http://stackoverflow.com/a/5809186 */

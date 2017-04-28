@@ -43,9 +43,30 @@ class WorkoutForm extends React.Component{
   }
 
   componentWillMount(){
+    // debugger
     Modal.setAppElement('body');
+    // this.props.requestMyRoutes();
+    // debugger
   }
   render(){
+    // let selectRoute;
+    // let fullRoutes;
+    // // debugger
+    // if (this.props.routes.route === null){
+    //   // fullRoutes = (<select>
+    //     <option>No Routes</option>
+    //   // </select>);
+    //
+    // }
+    // else{
+    //   selectRoute = Object.values(this.props.routes).map((route, id) =>
+    //     <option key = {id} >
+    //     { route.title }
+    //     </option>);
+    //   fullRoutes = (
+    //     selectRoute
+    // );
+    // }
     return(
       <div className = "create-workout-page">
         <div>
@@ -69,9 +90,6 @@ class WorkoutForm extends React.Component{
                  <textarea onChange = {this.update('description')}className = "create-workout-description" >
 
                  </textarea>
-               </div>
-               <div>
-                 
                </div>
                <div className = "cancel-save-buttons">
                  <button className = "cancel-button">
@@ -108,3 +126,14 @@ export default WorkoutForm;
 // <button type = "submit" onClick = {this.handleClose}  className = "cancel-button">
 //   Cancel
 // </button>
+
+
+
+
+
+
+// <div className="styled-select blue semi-square">
+//   <select>
+//     { fullRoutes }
+//   </select>
+// </div>
