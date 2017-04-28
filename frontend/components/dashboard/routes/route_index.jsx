@@ -41,7 +41,7 @@ class RouteIndex extends React.Component{
           {Object.values(this.props.routes).map(route =>
             <div key = {route.id}>
               <li>{this.renderMap(route)}</li>
-              <li>{route.id}</li>
+              <li>{route.title}</li>
               <li>{route.description}</li>
 
             </div>
