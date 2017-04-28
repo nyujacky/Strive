@@ -4,7 +4,7 @@ import WorkoutIndex from './workout_index';
 import {requestRoutes} from '../../../actions/route_actions';
 
 const mapStateToProps = state => {
-  // debugger
+  // 
   let myworkouts;
   if (state.workouts === null){
     myworkouts = 0;

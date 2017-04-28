@@ -66,14 +66,14 @@ class RouteMap extends React.Component {
   }
   addLatLng(event) {
        this.state.path = this.poly.getPath();
-      //  debugger
+      //
       // //  // Because path is an MVCArray, we can simply append a new coordinate
       // //  // and it will automatically appear.
       if (event.latLng){
 
        this.state.path.push(event.latLng);
        this.props.updatePolyLine(google.maps.geometry.encoding.encodePath(this.state.path));
-       debugger
+
       }
 
        // Add a new marker at the new plotted point on the polyline.
@@ -93,7 +93,7 @@ class RouteMap extends React.Component {
               map: this.map,
               draggable: true
             });
-          // debugger
+          //
          // //  // Because path is an MVCArray, we can simply append a new coordinate
          // //  // and it will automatically appear.
          if (event.latLng){
@@ -101,7 +101,7 @@ class RouteMap extends React.Component {
           this.state.markerArray.push(marker);
           // this.state.markerArray.push(event.latLng);
           if (this.state.markerArray.length > 1){
-            // debugger
+            //
             // this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
           }
          }
@@ -114,16 +114,16 @@ class RouteMap extends React.Component {
              map: this.map,
              draggable: true
            });
-         // debugger
+         //
         // //  // Because path is an MVCArray, we can simply append a new coordinate
         // //  // and it will automatically appear.
         if (event.latLng){
-          // debugger
+          //
          // this.state.path.push(event.latLng);
          this.state.markers.push(marker);
          // this.state.markerArray.push(event.latLng);
          if (this.state.markers.length > 1){
-          //  debugger
+          //
            // this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
            this.setDirections(this.map, this.state.markers, this);
          }
@@ -135,7 +135,7 @@ class RouteMap extends React.Component {
         return {location: marker.position, stopover: true};
       });
       let destination = markers[markers.length-1];
-      // debugger
+      //
       that.directionsDisplay = new google.maps.DirectionsRenderer({map: that.map, suppressMarkers: true});
       that.directionsService = new google.maps.DirectionsService;
       that.directionsService.route({
@@ -153,7 +153,7 @@ class RouteMap extends React.Component {
             that.directionsDisplay.setDirections(directionsResult);
             that.state.path = directionsResult.routes[0].overview_polyline;
             that.props.updatePolyLine(that.state.path);
-            // debugger
+            // 
             that.props.updateDistance(that.totalDistance(directionsResult));
 
           } else {
@@ -167,7 +167,7 @@ class RouteMap extends React.Component {
 
     totalDistance (directionsResult) {
     let sum = 0;
-    // debugger
+    //
     directionsResult.routes[0].legs.forEach( (leg) => {
       sum += leg.distance.value; //in meters
     });

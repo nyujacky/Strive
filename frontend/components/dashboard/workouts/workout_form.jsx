@@ -19,9 +19,9 @@ class WorkoutForm extends React.Component{
   }
 
   handleSubmit(e){
-    // debugger
+    // 
     e.preventDefault();
-    // debugger
+    // 
     this.props.createWorkout(this.state)
       .then(()=> hashHistory.push('/workouts'));
 

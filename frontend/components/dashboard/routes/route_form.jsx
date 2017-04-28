@@ -24,9 +24,9 @@ class RouteForm extends React.Component{
     this.updateDistance = this.updateDistance.bind(this);
   }
   handleSubmit(e){
-    // debugger
+    //
     e.preventDefault();
-    // debugger
+    //
     this.props.createRoute(this.state)
       .then(()=> hashHistory.push('/routes'));
 

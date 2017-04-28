@@ -7,12 +7,12 @@ import Dashboard from '../dashboard';
 
 class RouteIndex extends React.Component{
   componentWillMount(){
-    // debugger
+    //
     this.props.requestMyRoutes();
   }
   renderMap(route){
     let smallMap;
-    // debugger
+    //
     if(route.routepolystring){
         smallMap = (<img src = {`https://maps.googleapis.com/maps/api/staticmap?size=100x100&scale=2&zoom=11&path=weight:3%7Ccolor:green%7Cenc:${route.routepolystring}&key=AIzaSyCYSZguOomYKJj6YrPhOTETA7CwEl22N4g`}></img>);
       }
@@ -22,7 +22,7 @@ class RouteIndex extends React.Component{
       return smallMap;
     }
   render(){
-    // debugger
+    //
     // var Spinner = require('react-spinkit');
     let displayRoutes;
     if (this.props.routes.route === null) {

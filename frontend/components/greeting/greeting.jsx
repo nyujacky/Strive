@@ -11,7 +11,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => {
   // const redirectIfLoggedOut = () => {
-  //   debugger
+  //   
   //   logout.then(hashHistory.push('/'));
   // };
   const handleLogout = (e) =>{

@@ -7,20 +7,20 @@ import Dashboard from '../dashboard';
 
 class WorkoutIndex extends React.Component{
   componentWillMount(){
-    // debugger
+    // 
     this.props.requestWorkouts(this.props.currentUser.id);
   }
   componentWillUpdate(newProps){
-    // debugger
+    // 
   }
   // getWorkoutTotal(){
   //   this.props.requestRoutes();
   // }
   render(){
     let displayWorkouts;
-    // debugger
+    // 
     if (this.props.workouts.workout === null) {
-      // debugger
+      // 
       // displayWorkouts = (<div id="spinner"></div>);
       displayWorkouts = (<div className="loader">
                       <div className="circle one"></div>

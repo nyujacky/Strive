@@ -19,7 +19,7 @@ export const getRoute = (route) => {
 };
 
 export const createRoute = (route) => {
-  debugger
+  
   return $.ajax({
     method: 'POST',
     url: `api/users/${route.user_id}/routes`,
