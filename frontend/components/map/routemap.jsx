@@ -23,10 +23,10 @@ class RouteMap extends React.Component {
     this.addLatLng = this.addLatLng.bind(this);
     this.drawRoute = this.drawRoute.bind(this);
     this.addPoint = this.addPoint.bind(this);
-    this.drawPoint = this.drawPoint.bind(this);
+    this.addDirection = this.addDirection.bind(this);
     this.state ={
       path: "",
-      markerArray: []
+      markers: []
     }
   }
   componentDidMount() {
@@ -41,7 +41,7 @@ class RouteMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     // this.drawRoute();
     // this.map.addListener('click', this.addLatLng);
-    this.map.addListener('click', this.addPoint);
+    this.map.addListener('click', this.addDirection);
   }
 
   drawRoute(){
@@ -70,8 +70,10 @@ class RouteMap extends React.Component {
       // //  // Because path is an MVCArray, we can simply append a new coordinate
       // //  // and it will automatically appear.
       if (event.latLng){
+
        this.state.path.push(event.latLng);
        this.props.updatePolyLine(google.maps.geometry.encoding.encodePath(this.state.path));
+       debugger
       }
 
        // Add a new marker at the new plotted point on the polyline.
@@ -84,64 +86,86 @@ class RouteMap extends React.Component {
 
      addPoint(event) {
           // this.state.path = this.poly.getPath();
-          let directionsDisplay = new google.maps.DirectionsRenderer({map: this.map});
+          let directionsDisplay = new google.maps.DirectionsRenderer({map: this.map, suppressMarkers: true});
           let directionsService = new google.maps.DirectionsService;
-          // let marker = new google.maps.Marker ({
-          //     position: event.latLng,
-          //     map: this.map,
-          //     draggable: false
-          //   });
+          let marker = new google.maps.Marker ({
+              position: event.latLng,
+              map: this.map,
+              draggable: true
+            });
           // debugger
          // //  // Because path is an MVCArray, we can simply append a new coordinate
          // //  // and it will automatically appear.
          if (event.latLng){
           // this.state.path.push(event.latLng);
-          this.state.markerArray.push(event.latLng);
+          this.state.markerArray.push(marker);
+          // this.state.markerArray.push(event.latLng);
           if (this.state.markerArray.length > 1){
             // debugger
-            this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
+            // this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
           }
-          // else if(markerArray.length === 1) {
-          //   markerArray.push(event.latLng);
-          //   this.drawPoint(markerArray[markerArray.length-1], markerArray[markerArray.length-2],directionsService, directionsDisplay);
-          //   markerArray.pop();
-          // }
-          // this.props.updatePolyLine(google.maps.geometry.encoding.encodePath(this.state.path));
          }
-
-          // Add a new marker at the new plotted point on the polyline.
-         //  var marker = new google.maps.Marker({
-         //    position: event.latLng,
-         //   //  title: '#' + path.getLength(),
-         //    map: this.map
-         //  });
         }
-  drawPoint(origin,destination, service, display, that){
-    service.route({
-      origin: origin,
-      destination: destination,
-      travelMode: 'WALKING',
-    }, function(directionsResult, status){
-      if(status === 'OK'){
-        display.setDirections(directionsResult);
-        that.state.path = directionsResult.routes[0].overview_polyline;
-        that.props.updatePolyLine(google.maps.geometry.encoding.encodePath(that.state.path));
-        debugger
-      }else{
-        alert('Could not display directions due to: ' + status);
-      }
-    });
-  }
 
-  // calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, map){
-  //   for(let i = 0; i < markerArray.length; i++){
-  //     markerArray[i].setMap(null);
-  //   }
-  //   directionsService.route({
-  //
-  //   })
-  //
-  // }
+        addDirection(event) {
+             // this.state.path = this.poly.getPath();
+             let marker = new google.maps.Marker ({
+                 position: event.latLng,
+                 map: this.map,
+                 draggable: true
+               });
+             // debugger
+            // //  // Because path is an MVCArray, we can simply append a new coordinate
+            // //  // and it will automatically appear.
+            if (event.latLng){
+              // debugger
+             // this.state.path.push(event.latLng);
+             this.state.markers.push(marker);
+             // this.state.markerArray.push(event.latLng);
+             if (this.state.markers.length > 1){
+              //  debugger
+               // this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
+               this.setDirections(this.map, this.state.markers, this);
+             }
+            }
+           }
+        setDirections(map, markers, that){
+          let origin = markers[0];
+          let waypoints = markers.slice(1, -1).map((marker) => {
+            return {location: marker.position, stopover: true};
+          });
+          let destination = markers[markers.length-1];
+          // debugger
+          that.directionsDisplay = new google.maps.DirectionsRenderer({map: that.map, suppressMarkers: true});
+          that.directionsService = new google.maps.DirectionsService;
+          that.directionsService.route({
+              origin: origin.position,
+              destination: destination.position,
+              waypoints: waypoints,
+              travelMode: "WALKING"
+              },
+              function(directionsResult, status) {
+
+              if (status === 'OK') {
+                that.directionsResult = directionsResult;
+                // that.renderStartEndMarkers();
+                // debugger
+                that.directionsDisplay.setDirections(directionsResult);
+                that.state.path = directionsResult.routes[0].overview_polyline;
+                that.props.updatePolyLine(that.state.path);
+                // debugger
+//
+              } else {
+                window.alert("Directions request failed due to " + status);
+                that.markers = that.markers.slice(0,-2);
+              }
+            });
+
+        }
+
+
+
+
 
 
 
