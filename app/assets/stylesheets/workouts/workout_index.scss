@@ -8,10 +8,14 @@
   // width: 600px;
   font-size: 24px;
   align-items: flex-start;
+  // flex-direction: column;
   a{
     text-decoration: none;
     border: 1px solid #ccc;
-    color: black;
+    margin: 10px 0;
+    width: 110px;
+    color: white;
+    background-color: #FF4500;
     padding: 10px;
     font-size: 18px;
   }
@@ -21,7 +25,8 @@
   display: flex;
   width: 600px;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
+  flex-direction: column;
 }
 .workout-index-list{
   width: 400px;

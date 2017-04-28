@@ -70,6 +70,9 @@ class WorkoutForm extends React.Component{
 
                  </textarea>
                </div>
+               <div>
+                 
+               </div>
                <div className = "cancel-save-buttons">
                  <button className = "cancel-button">
                    <Link to = "/workouts"> Cancel </Link>
