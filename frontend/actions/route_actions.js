@@ -32,9 +32,12 @@ export const removeRoute = (route) => {
 export const requestRoute = route => dispatch => {
   return RouteAPIUtil.getRoute(route).then(route => dispatch(receiveRoute(route)));
 };
-
-export const requestRoutes = route => dispatch => {
-  return RouteAPIUtil.getRoutes(route).then(routes => dispatch(receiveRoutes(routes)));
+//Chaned from route to userId
+export const requestRoutes = userId => dispatch => {
+  return RouteAPIUtil.getRoutes(userId).then(routes => dispatch(receiveRoutes(routes)));
+};
+export const requestMyRoutes = () => dispatch => {
+  return RouteAPIUtil.getMyRoutes().then(routes => dispatch(receiveRoutes(routes)));
 };
 
 export const createRoute = route => dispatch => {

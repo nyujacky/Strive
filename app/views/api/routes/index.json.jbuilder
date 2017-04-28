@@ -1,5 +1,6 @@
 json.array! @routes do |route|
   json.id route.id
+  json.user_id route.user_id
   json.sport route.sport
   json.title route.title
   json.date route.date

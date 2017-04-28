@@ -5,6 +5,12 @@ export const getRoutes = (userId) => {
     url: `api/users/${userId}/routes`
   });
 };
+export const getMyRoutes = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/user_routes`
+  });
+};
 export const getRoute = (route) => {
   return $.ajax({
     method: 'GET',
@@ -13,6 +19,7 @@ export const getRoute = (route) => {
 };
 
 export const createRoute = (route) => {
+  debugger
   return $.ajax({
     method: 'POST',
     url: `api/users/${route.user_id}/routes`,

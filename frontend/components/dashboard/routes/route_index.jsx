@@ -8,7 +8,7 @@ import Dashboard from '../dashboard';
 class RouteIndex extends React.Component{
   componentWillMount(){
     // debugger
-    this.props.requestRoutes(this.props.currentUser.id);
+    this.props.requestMyRoutes();
   }
   renderMap(route){
     let smallMap;

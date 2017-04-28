@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     end
 
 
-
     # resources :workouts, only [:create, :destroy, :index, :show, :update]
 
   end
+  get 'api/user_routes', :to => 'api/routes#selfroutes',:defaults => { :format => 'json' }
 end

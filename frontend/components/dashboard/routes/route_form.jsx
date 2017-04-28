@@ -24,7 +24,7 @@ class RouteForm extends React.Component{
   handleSubmit(e){
     // debugger
     e.preventDefault();
-    // debugger
+    debugger
     this.props.createRoute(this.state)
       .then(()=> hashHistory.push('/routes'));
 

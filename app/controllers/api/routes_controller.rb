@@ -5,7 +5,7 @@ class Api::RoutesController < ApplicationController
   end
 
   def create
-    @route = Route.new(route_params);
+    @route = current_user.routes.new(route_params);
     if @route.save
       render :index
     end
@@ -16,7 +16,7 @@ class Api::RoutesController < ApplicationController
   end
 
   def update
-    @route = Route.find(params[:id])
+    @route = current_user.routes.find(params[:id])
     if @route.update(route_params)
       render :show
     end
@@ -25,10 +25,16 @@ class Api::RoutesController < ApplicationController
 
   def destroy
     @route = current_user.routes.find(params[:id])
-    @route.destroy
-    render :index
+    if @route.destroy
+      render :index
+    end
   end
 
+  def selfroutes
+    @routes = current_user.routes
+    render :index
+
+  end
 
   private
   def route_params

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {requestRoutes} from '../../../actions/route_actions';
+import {requestMyRoutes} from '../../../actions/route_actions';
 import RouteIndex from './route_index';
 
 const mapStateToProps = state =>{
@@ -16,7 +16,7 @@ const mapStateToProps = state =>{
 };
 const mapDispatchToProps = dispatch => {
   return {
-    requestRoutes: (userId) => dispatch(requestRoutes(userId))
+    requestMyRoutes: () => dispatch(requestMyRoutes())
   };
 };
 
