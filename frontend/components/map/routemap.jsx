@@ -22,9 +22,11 @@ class RouteMap extends React.Component {
     super(props);
     this.addLatLng = this.addLatLng.bind(this);
     this.drawRoute = this.drawRoute.bind(this);
+    this.addPoint = this.addPoint.bind(this);
+    this.drawPoint = this.drawPoint.bind(this);
     this.state ={
-      path: ""
-
+      path: "",
+      markerArray: []
     }
   }
   componentDidMount() {
@@ -37,8 +39,9 @@ class RouteMap extends React.Component {
 
     // wrap the mapDOMNode in a Google Map
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.drawRoute();
-    this.map.addListener('click', this.addLatLng);
+    // this.drawRoute();
+    // this.map.addListener('click', this.addLatLng);
+    this.map.addListener('click', this.addPoint);
   }
 
   drawRoute(){
@@ -78,6 +81,69 @@ class RouteMap extends React.Component {
       //    map: this.map
       //  });
      }
+
+     addPoint(event) {
+          // this.state.path = this.poly.getPath();
+          let directionsDisplay = new google.maps.DirectionsRenderer({map: this.map});
+          let directionsService = new google.maps.DirectionsService;
+          // let marker = new google.maps.Marker ({
+          //     position: event.latLng,
+          //     map: this.map,
+          //     draggable: false
+          //   });
+          // debugger
+         // //  // Because path is an MVCArray, we can simply append a new coordinate
+         // //  // and it will automatically appear.
+         if (event.latLng){
+          // this.state.path.push(event.latLng);
+          this.state.markerArray.push(event.latLng);
+          if (this.state.markerArray.length > 1){
+            // debugger
+            this.drawPoint(this.state.markerArray[this.state.markerArray.length-2], this.state.markerArray[this.state.markerArray.length-1],directionsService, directionsDisplay,this);
+          }
+          // else if(markerArray.length === 1) {
+          //   markerArray.push(event.latLng);
+          //   this.drawPoint(markerArray[markerArray.length-1], markerArray[markerArray.length-2],directionsService, directionsDisplay);
+          //   markerArray.pop();
+          // }
+          // this.props.updatePolyLine(google.maps.geometry.encoding.encodePath(this.state.path));
+         }
+
+          // Add a new marker at the new plotted point on the polyline.
+         //  var marker = new google.maps.Marker({
+         //    position: event.latLng,
+         //   //  title: '#' + path.getLength(),
+         //    map: this.map
+         //  });
+        }
+  drawPoint(origin,destination, service, display, that){
+    service.route({
+      origin: origin,
+      destination: destination,
+      travelMode: 'WALKING',
+    }, function(directionsResult, status){
+      if(status === 'OK'){
+        display.setDirections(directionsResult);
+        that.state.path = directionsResult.routes[0].overview_polyline;
+        that.props.updatePolyLine(google.maps.geometry.encoding.encodePath(that.state.path));
+        debugger
+      }else{
+        alert('Could not display directions due to: ' + status);
+      }
+    });
+  }
+
+  // calculateAndDisplayRoute(directionsDisplay, directionsService, markerArray, map){
+  //   for(let i = 0; i < markerArray.length; i++){
+  //     markerArray[i].setMap(null);
+  //   }
+  //   directionsService.route({
+  //
+  //   })
+  //
+  // }
+
+
 
   render() {
     return (
