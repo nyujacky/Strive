@@ -14,17 +14,19 @@ class RouteForm extends React.Component{
       title: "",
       description: "",
       user_id: this.props.currentUserId,
-      routepolystring: ""
+      routepolystring: "",
+      distance: 0.0
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updatePolyLine = this.updatePolyLine.bind(this);
+    this.updateDistance = this.updateDistance.bind(this);
   }
   handleSubmit(e){
     // debugger
     e.preventDefault();
-    debugger
+    // debugger
     this.props.createRoute(this.state)
       .then(()=> hashHistory.push('/routes'));
 
@@ -38,6 +40,9 @@ class RouteForm extends React.Component{
   }
   updatePolyLine(string){
     this.setState({routepolystring: string});
+  }
+  updateDistance(miles){
+    this.setState({distance: miles});
   }
   handleClick(){
     this.setState({isShowingModal: true});
@@ -76,7 +81,7 @@ class RouteForm extends React.Component{
 
         <div className = "map-container">
 
-          <RouteMap updatePolyLine = {this.updatePolyLine}/>
+          <RouteMap updatePolyLine = {this.updatePolyLine} updateDistance = {this.updateDistance}/>
         </div>
         <Modal
          className={'modal-box'}

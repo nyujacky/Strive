@@ -39,10 +39,11 @@ class RouteIndex extends React.Component{
         displayRoutes = (
         <ul className = "route-index-list">
           {Object.values(this.props.routes).map(route =>
-            <div key = {route.id}>
+            <div className = "route-item" key = {route.id}>
               <li>{this.renderMap(route)}</li>
-              <li>{route.title}</li>
+              <li className = "route-item-title">{route.title}</li>
               <li>{route.description}</li>
+              <li>{route.distance + ' mi'}</li>
             </div>
             )
           }
@@ -55,13 +56,16 @@ class RouteIndex extends React.Component{
 
           <Dashboard />
         </div>
-        <div className = "route-index-header">
+        <div className = "route-index-container">
+          <div className = "route-index-header">
 
-            My Routes
+              My Routes
 
 
-            <Link to ="/routes/new"> New Route </Link>
+              <Link to ="/routes/new"> New Route </Link>
+          </div>
         </div>
+
           {displayRoutes}
       </div>
     );

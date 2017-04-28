@@ -2,14 +2,20 @@
   height: 1000px;
 }
 
+.route-index-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0 80px;
+
+}
 .route-index-header{
   display: flex;
   // justify-content: flex-start;
-  padding: 20px 0 0 80px;
   width: 600px;
   font-size: 24px;
   // align-items: center;
   flex-direction: column;
+  border-bottom: 1px solid #ccc;
   a{
     text-decoration: none;
     border: 1px solid #ccc;
@@ -41,5 +47,13 @@
       // padding: 10px;
       margin: 10px;
     }
+  }
+}
+.route-item{
+  background-color: #f7f7f7;
+  .route-item-title{
+    // color: #007FB6;
+    // color: #FF4500;
+    font-weight: bold;
   }
 }
