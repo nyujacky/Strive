@@ -5,9 +5,14 @@ import Dashboard from '../dashboard';
 
 
 class RouteShow extends React.Component{
-  
+  constructor(props){
+    super(props);
+  }
   render(){
-
+    return(
+      <div className = "route-show-page">
+      </div>
+    );
   }
 }
 export default RouteShow;
