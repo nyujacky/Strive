@@ -43,7 +43,7 @@ class RouteIndex extends React.Component{
               <li>{this.renderMap(route)}</li>
               <li>{route.title}</li>
               <li>{route.description}</li>
-
+</li>
             </div>
             )
           }
