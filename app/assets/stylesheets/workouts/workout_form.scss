@@ -39,8 +39,12 @@
     padding: 10px 0;
   }
   .cancel-button{
-    color: black;
     background-color: white;
+    a{
+      color: black;
+      text-decoration: none;
+      cursor: default;
+    }
   }
   .save-button{
     background-color: black;

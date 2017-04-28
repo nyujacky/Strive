@@ -114,10 +114,16 @@
     .cancel-button{
       color: black;
       background-color: white;
+      :hover{
+        cursor: pointer;
+      }
     }
     .save-button{
       background-color: black;
       color: white;
+      :hover{
+        cursor: pointer;
+      }
     }
   }
 }

@@ -45,7 +45,6 @@ class WorkoutForm extends React.Component{
   componentWillMount(){
     Modal.setAppElement('body');
   }
-
   render(){
     return(
       <div className = "create-workout-page">
@@ -72,8 +71,10 @@ class WorkoutForm extends React.Component{
                  </textarea>
                </div>
                <div className = "cancel-save-buttons">
+                 <button className = "cancel-button">
+                   <Link to = "/workouts"> Cancel </Link>
+                 </button>
                  <input type = "submit" className = "save-button" value = "Save"/>
-
 
                </div>
               </form>
