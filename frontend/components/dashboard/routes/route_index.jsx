@@ -43,7 +43,15 @@ class RouteIndex extends React.Component{
               <li>{this.renderMap(route)}</li>
               <li className = "route-item-title">{route.title}</li>
               <li>{route.description}</li>
-              <li>{route.distance + ' mi'}</li>
+              <div className = "route-item-distance">
+                <li className = "route-distance-value">
+                  <strong>{route.distance}</strong>
+                  <label className = "mi"> mi </label>
+                </li>
+                <label className = "distance-label">
+                  Distance
+                </label>
+              </div>
             </div>
             )
           }

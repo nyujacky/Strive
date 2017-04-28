@@ -31,6 +31,7 @@
   // margin-left: 60px;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 80px;
   div{
     // margin: 20px 0;
     display: flex;
@@ -38,7 +39,7 @@
     justify-content: center;
     border: 1px solid black;
     // height: 100px;
-    margin: 20px;
+    margin: 20px 0;
     width: 250px;
     margin-bottom: 20px;
     li{
@@ -56,4 +57,21 @@
     // color: #FF4500;
     font-weight: bold;
   }
+  .route-item-distance{
+    border: none;
+    li{
+      margin: 0;
+      align-items: flex-end;
+      strong{
+        font-size: 20px;
+      }
+
+    }
+    .distance-label{
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+
 }
