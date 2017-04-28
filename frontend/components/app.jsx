@@ -13,7 +13,10 @@ const App = ({children}) => {
       </div>
 
       <div className = "index-content">
+        <div>
 
+          <h1 className = "index-header-title"> Connecting athletes.</h1>
+        </div>
       </div>
     </div>
   );

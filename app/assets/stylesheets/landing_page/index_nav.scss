@@ -51,3 +51,18 @@
   align-items: center;
 
 }
+.index-content{
+  position: relative;
+  display: flex;
+}
+.index-header-title{
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+  top: 400px;
+  left: 20px;
+  font-size: 50px;
+  color: white;
+  font-family: Helvetica;
+
+}
