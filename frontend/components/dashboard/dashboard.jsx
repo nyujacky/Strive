@@ -9,10 +9,10 @@ class Dashboard extends React.Component{
   render(){
     let filler;
     let smallmap;
+    let header;
     if (this.props.location.pathname === "/dashboard"){
       filler = (<div className = "main-content"></div>);
-      smallmap = (<img src = "https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyCYSZguOomYKJj6YrPhOTETA7CwEl22N4g"/>
-);
+      header = (<div className = "activity-feed">Activity Feed</div>)
     }else{
       filler = null;
     }
@@ -44,7 +44,7 @@ class Dashboard extends React.Component{
           <GreetingContainer />
         </div>
       </div>
-
+      {header}
       {filler}
     </div>
     );
