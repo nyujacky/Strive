@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
 
 	guestLogin(e){
 		e.preventDefault();
-		this.props.processForm({email: "dummy@gmail.com", password: "123456"});
+		this.props.processForm({email: "doggo@gmail.com", password: "123456"});
 	}
 
 	guestLoginButton(){
