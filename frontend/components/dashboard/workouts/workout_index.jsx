@@ -34,6 +34,7 @@ class WorkoutIndex extends React.Component{
         displayWorkouts = (
         <ul className = "workout-index-list">
           {Object.values(this.props.workouts).map(workout => <div className = "workout-item" key = {workout.id}>
+            <label>Workout Id</label>
             <li>{workout.id}</li>
             <li>{workout.user_id}</li>
           </div>
