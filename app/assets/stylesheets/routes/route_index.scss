@@ -51,6 +51,8 @@
   }
 }
 .route-item{
+  display: flex;
+  align-items: center;
   background-color: #f7f7f7;
   .route-item-title{
     // color: #007FB6;
