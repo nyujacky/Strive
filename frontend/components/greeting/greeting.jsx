@@ -19,8 +19,12 @@ const personalGreeting = (currentUser, logout) => {
   }
   return (
   <hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.email}!</h2>
-    <button className="header-button" onClick={handleLogout}>Log Out</button>
+    <div className = "header-group-container">
+      <h2 className="header-name">Hi, {currentUser.email}!</h2>
+      <div className = "header-button-container">
+        <button className="header-button" onClick={handleLogout}>Log Out</button>
+      </div>
+    </div>
 	</hgroup>
 );
 };

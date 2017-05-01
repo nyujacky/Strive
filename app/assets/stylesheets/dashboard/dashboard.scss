@@ -9,7 +9,7 @@
   justify-content: space-around;
   position: relative;
   background-color: white;
-  z-index: 2;
+  z-index: 7;
   height: 55px;
   border-bottom: 1px solid #e2e2e2;
 }
@@ -47,10 +47,11 @@
 .home-page-nav-links button{
   display: flex;
   margin: 0 10px;
+  padding: 0 10px;
   cursor: pointer;
   border: 1px solid transparent;
   background-color: white;
-  font-size: 15px;
+  font-size: 14px;
 
 }
 .home-page-nav-links button::after{
@@ -58,22 +59,26 @@
 
 }
 
-
+.dashboard-links{
+  padding: 0;
+}
 .link-container{
   position: relative;
   // height: 35px;
   // padding: 10px 0;
-
+  z-index:6;
   .button-link-div{
 
     display: none;
     flex-direction: column;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
+    // border-right: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
+    // border-top: 1px solid #ccc;
+
     position: absolute;
     left: 10px;
-    top: 56px;
+    top: 55px;
     width: 150px;
     height: auto;
 
@@ -95,7 +100,6 @@
 }
 
 .link-container:hover{
-
   button{
     padding: -1px;
     border-top: 1px solid #ccc;
@@ -112,6 +116,43 @@
     }
     button:hover{
       width: 100%;
+      background-color: #e5e5e5;
+    }
+  }
+}
+
+.dashboard-logout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .header-name{
+    display: flex;
+    align-items: center;
+    height: 55px;
+
+  }
+  .header-button-container{
+    position: absolute;
+    top: 55px;
+    border: 1px solid #ccc;
+    width: 150px;
+    height: 50px;
+    display: none;
+    .header-button{
+      background-color: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+  .header-group-container:hover{
+    .header-button-container{
+      display: flex;
+    }
+    .header-button:hover{
       background-color: #e5e5e5;
     }
   }
