@@ -1,24 +1,27 @@
-# README
+#Strive
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Strive live](https//striver.herokuapp.com/)
 
-Things you may want to cover:
+Strive is a full-stack web application inspired by Strava. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
-* Ruby version
+## Features & Implementation
 
-* System dependencies
+### User Authentication
 
-* Configuration
+Users have authentication to go through before being registered, and this is done through the rails backend where a user need only provide an email and password, where upon storage the password is encrypted and made into a hash named the password_digest so that no sensitive information can be extracted easily.
 
-* Database creation
+### Routes
 
-* Database initialization
+Routes are stored in the database with the fields user_id, sport, title, date, distance, duration, duration, elevation, routepolystring, and description, as those are the fields to identify each individual route. This data is all stored in the routes table in the database, and rendered during an index call of all routes for a user, or when adding it to a workout. This is done through AJAX API calls. From there the rendering is through the workout form component as well as the route index component.
 
-* How to run the test suite
+### Workouts
 
-* Services (job queues, cache servers, search engines, etc.)
+Workouts are stored in the database with a route_id, user_id, description, and title. They reference specific routes and belong to a user. When being created, the user has the option of creating a new route or using an old one. The rendering is done through the workout component.
 
-* Deployment instructions
+## Future Directions
 
-* ...
+### Search
+
+### Activity Feed
+
+### Landing Page
