@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
 
 	guestLogin(e){
 		e.preventDefault();
-		this.props.processForm({email: "doggo@gmail.com", password: "123456"});
+		this.props.guestLogin({email: "doggo@gmail.com", password: "123456"});
 	}
 
 	guestLoginButton(){
@@ -117,7 +117,7 @@ class SessionForm extends React.Component {
 							</div>
 							<br/>
 								<button className = "login-button">{this.props.formType}</button>
-								{this.guestLoginButton()}
+								<button className = "login-button" onClick = {this.guestLogin} >{"Guest Login"}</button>
 						</div>
 					</div>
 				</form>
