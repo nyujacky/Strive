@@ -19,9 +19,9 @@ class WorkoutForm extends React.Component{
   }
 
   handleSubmit(e){
-    // 
+    //
     e.preventDefault();
-    // 
+    //
     this.props.createWorkout(this.state)
       .then(()=> hashHistory.push('/workouts'));
 
@@ -48,6 +48,7 @@ class WorkoutForm extends React.Component{
     // this.props.requestMyRoutes();
     // debugger
   }
+
   render(){
     // let selectRoute;
     // let fullRoutes;
