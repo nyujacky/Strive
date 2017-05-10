@@ -1,4 +1,4 @@
-#Strive
+# Strive
 
 [Strive live](https//striver.herokuapp.com/)
 
