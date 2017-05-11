@@ -2,7 +2,7 @@
 export const getRoutes = (userId) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/routes`
+    url: `api/routes`
   });
 };
 export const getMyRoutes = () => {
@@ -14,15 +14,15 @@ export const getMyRoutes = () => {
 export const getRoute = (route) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${route.user_id}/routes/${route.id}`
+    url: `api/routes/${route.id}`
   });
 };
 
 export const createRoute = (route) => {
-  
+
   return $.ajax({
     method: 'POST',
-    url: `api/users/${route.user_id}/routes`,
+    url: `api/routes`,
     data: {route}
   });
 };
@@ -30,7 +30,7 @@ export const createRoute = (route) => {
 export const updateRoute = (route) => {
   return $.ajax({
     method: 'PATCH',
-    url: `api/users/${route.user_id}/routes/${route.id}`,
+    url: `api/routes/${route.id}`,
     data : {route}
   });
 };
@@ -38,5 +38,5 @@ export const updateRoute = (route) => {
 export const deleteRoute = route => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/users/${route.user_id}/routes/${route.id}` });
+    url: `api/routes/${route.id}` });
 };

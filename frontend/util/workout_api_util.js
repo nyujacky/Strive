@@ -1,28 +1,34 @@
 export const getWorkouts = (userId) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${userId}/workouts`
+    url: `api/workouts`
   });
 };
 
 export const getWorkout = (workout) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${workout.user_id}/workouts/${workout.id}`
+    url: `api/workouts/${workout.id}`
+  });
+};
+export const getMyWorkouts = () => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/user_workouts`
   });
 };
 
 export const createWorkout = (workout) => {
   return $.ajax({
     method: 'POST',
-    url: `api/users/${workout.user_id}/workouts`,
+    url: `api/workouts`,
     data: {workout}
   });
 };
 export const updateWorkout = (workout) => {
   return $.ajax({
       method: 'PATCH',
-      url: `api/users/${workout.user_id}/workouts/${workout.id}`,
+      url: `api/workouts/${workout.id}`,
       data: {workout}
   });
 };
@@ -30,6 +36,6 @@ export const updateWorkout = (workout) => {
 export const deleteWorkout = workout => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/users/${workout.user_id}/workouts/${workout.id}`
+    url: `api/workouts/${workout.id}`
   });
 };

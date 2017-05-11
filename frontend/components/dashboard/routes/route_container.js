@@ -3,7 +3,6 @@ import {createRoute} from '../../../actions/route_actions';
 import RouteForm from './route_form';
 
 const mapStateToProps = (state) => {
-
   return({
     // route: state.routes[ownProps.params.routeId],
     currentUserId: state.session.currentUser.id

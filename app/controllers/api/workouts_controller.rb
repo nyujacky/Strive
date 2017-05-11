@@ -5,7 +5,10 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def create
+    # @workout = current_user.workouts.new(workout_params);
+    @route = current_user.routes.find(params[:workout][:route_id])
     @workout = Workout.new(workout_params);
+    @workout.route = @route;
     if @workout.save
       render :index
     end
@@ -16,7 +19,7 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def update
-    @workout = Workout.find(params[:id])
+    @workout = current_user.workouts.find(params[:id])
     if @workout.update(workout_params)
       render :show
     end
@@ -29,10 +32,14 @@ class Api::WorkoutsController < ApplicationController
     render :index
   end
 
+  def selfworkouts
+    @workouts = current_user.workouts
+    render :index
+  end
 
   private
   def workout_params
-    params.require(:workout).permit(:user_id, :route_id, :title, :description)
+    params.require(:workout).permit( :title, :description)
   end
 
 end

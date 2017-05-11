@@ -9,6 +9,7 @@ class RouteIndex extends React.Component{
   componentWillMount(){
     //
     this.props.requestMyRoutes();
+
   }
   renderMap(route){
     let smallMap;
@@ -23,10 +24,9 @@ class RouteIndex extends React.Component{
     }
   render(){
     //
-    // var Spinner = require('react-spinkit');
+    // debugger
     let displayRoutes;
     if (this.props.routes.route === null) {
-      // displayRoutes = (<div id="spinner"></div>);
       displayRoutes = (<div className="loader">
                       <div className="circle one"></div>
                       <div className="circle two"></div>

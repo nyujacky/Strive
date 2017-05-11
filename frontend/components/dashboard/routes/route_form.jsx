@@ -27,8 +27,10 @@ class RouteForm extends React.Component{
     //
     e.preventDefault();
     //
+    debugger
     this.props.createRoute(this.state)
       .then(()=> hashHistory.push('/routes'));
+      // .then(()=> hashHistory.push(`/user_routes`));
 
 
   }

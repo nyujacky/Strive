@@ -38,6 +38,10 @@
   div{
     padding: 10px 0;
   }
+  .choose-routes{
+    display: flex;
+    justify-content: flex-start;
+  }
   .cancel-button{
     background-color: white;
     a{
@@ -46,6 +50,20 @@
       cursor: default;
     }
   }
+  .route-index-list{
+    margin: 10px;
+
+  }
+  .route-index-header-small{
+    a{
+      text-decoration: none;margin: 10px 0;
+      width: 100px;
+      padding: 10px;
+      background-color: #FF4500;
+      color: white;
+    }
+  }
+
   .save-button{
     background-color: black;
     color: white;

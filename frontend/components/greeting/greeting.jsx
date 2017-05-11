@@ -15,7 +15,8 @@ const personalGreeting = (currentUser, logout) => {
   //   logout.then(hashHistory.push('/'));
   // };
   const handleLogout = (e) =>{
-    logout(e).then(()=> hashHistory.push('/'));
+    // debugger
+    logout(e).then(()=> hashHistory.replace('/'));
   }
   return (
   <hgroup className="header-group">

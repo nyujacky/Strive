@@ -10,8 +10,7 @@ class WorkoutForm extends React.Component{
       isShowingModal: false,
       title: "",
       description: "",
-      user_id: this.props.currentUserId,
-      route_id: null
+      route_id: 0
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -22,6 +21,9 @@ class WorkoutForm extends React.Component{
     //
     e.preventDefault();
     //
+    if(this.state.route_id == 0){
+      alert("Please create or select a route first.");
+    }
     this.props.createWorkout(this.state)
       .then(()=> hashHistory.push('/workouts'));
 
@@ -45,9 +47,15 @@ class WorkoutForm extends React.Component{
   componentWillMount(){
     // debugger
     Modal.setAppElement('body');
-    // this.props.requestMyRoutes();
-    // debugger
+    this.props.requestMyRoutes();
+
   }
+  // componentDidUpdate(){
+  //   if(newProps.routes.length != this.props.routes.length){
+  //   this.props.requestMyRoutes();
+  //   }
+  // }
+
 
   render(){
     // let selectRoute;
@@ -68,6 +76,33 @@ class WorkoutForm extends React.Component{
     //     selectRoute
     // );
     // }
+    // debugger
+
+    let displayRoutes;
+    if (this.props.routes.route === null) {
+      // displayRoutes = (<div id="spinner"></div>);
+      // displayRoutes = (<div className="loader">
+      //                 <div className="circle one"></div>
+      //                 <div className="circle two"></div>
+      //                 <div className="circle three"></div>
+      //                 </div>
+      //               );
+    }
+    else{
+
+        displayRoutes = (
+        <select onChange = {this.update("route_id")} className = "route-index-list">
+          <option > -- </option>
+          {Object.values(this.props.routes).map(route =>
+
+
+              <option value = {route.id} key = {route.id} className = "route-item-title">{route.title}</option>
+
+            )
+          }
+        </select>);
+    }
+    // debugger
     return(
       <div className = "create-workout-page">
         <div>
@@ -92,6 +127,14 @@ class WorkoutForm extends React.Component{
 
                  </textarea>
                </div>
+               <div className = "choose-routes">
+
+                 {displayRoutes}
+                 <div className = "route-index-header-small">
+                 <Link to ="/routes/new"> Create Route </Link>
+                 </div>
+               </div>
+
                <div className = "cancel-save-buttons">
                  <button className = "cancel-button">
                    <Link to = "/workouts"> Cancel </Link>

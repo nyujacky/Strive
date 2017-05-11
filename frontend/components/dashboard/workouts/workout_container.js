@@ -11,15 +11,15 @@ const mapStateToProps = (state) => {
   //   myroutes = state.route;
   // }
   return ({
-    // routes: myroutes,
-    currentUserId: state.session.currentUser.id
+    routes: state.route,
+    currentUserId: state.session.currentUser? state.session.currentUser.id : 0
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createWorkout: (workout) => dispatch(createWorkout(workout))
-    // requestMyRoutes: ()=> dispatch(requestMyRoutes())
+    createWorkout: (workout) => dispatch(createWorkout(workout)),
+    requestMyRoutes: ()=> dispatch(requestMyRoutes())
   };
 };
 

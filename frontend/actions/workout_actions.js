@@ -32,6 +32,9 @@ export const requestWorkout = workout => dispatch => {
 export const requestWorkouts = workout => dispatch => {
   return WorkoutAPIUtil.getWorkouts(workout).then(workouts => dispatch(receiveWorkouts(workouts)));
 };
+export const requestMyWorkouts = () => dispatch => {
+  return WorkoutAPIUtil.getMyWorkouts().then(workouts => dispatch(receiveWorkouts(workouts)));
+};
 
 export const createWorkout = workout => dispatch => {
   return WorkoutAPIUtil.createWorkout(workout).then(workout => dispatch(receiveWorkout(workout)));

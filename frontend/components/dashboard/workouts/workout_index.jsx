@@ -8,10 +8,15 @@ import Dashboard from '../dashboard';
 class WorkoutIndex extends React.Component{
   componentWillMount(){
     //
-    this.props.requestWorkouts(this.props.currentUser.id);
+    // this.props.requestWorkouts(this.props.currentUser.id);
+    this.props.requestMyWorkouts();
+    this.props.requestMyRoutes();
+
   }
   componentWillUpdate(newProps){
-    //
+    if(newProps.workouts.length != this.props.workouts.length){
+      this.props.requestMyWorkouts();
+    }
   }
   // getWorkoutTotal(){
   //   this.props.requestRoutes();
@@ -19,6 +24,7 @@ class WorkoutIndex extends React.Component{
   render(){
     let displayWorkouts;
     //
+    // debugger
     if (this.props.workouts.workout === null) {
       //
       // displayWorkouts = (<div id="spinner"></div>);
@@ -30,19 +36,19 @@ class WorkoutIndex extends React.Component{
                     );
     }
     else{
-
         displayWorkouts = (
         <ul className = "workout-index-list">
           {Object.values(this.props.workouts).map(workout => <div className = "workout-item" key = {workout.id}>
             <label>Workout Id</label>
             <li>{workout.id}</li>
-            <li>{workout.user_id}</li>
+            <li>{workout.route_title}</li>
+            <li>{}</li>
           </div>
         )
           }
         </ul>);
     }
-
+    // debugger
     return(
       <div className = "workout-index">
         <div>
