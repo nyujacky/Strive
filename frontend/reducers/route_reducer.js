@@ -11,6 +11,7 @@ const RouteReducer = (state = initialState, action) => {
     case RECEIVE_ROUTES:
       return merge({}, action.routes);
     case RECEIVE_ROUTE:
+    debugger
       const route = action.route;
       const newState1 = merge({}, state);
       merge(newState1.routes,action.route);

@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, hashHistory, withRouter } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
 // import DashboardContainer from './dashboard_container';
-
+import ActivityFeedContainer from './activityfeed_container';
 
 class Dashboard extends React.Component{
 
@@ -11,7 +11,11 @@ class Dashboard extends React.Component{
     let smallmap;
     let header;
     if (this.props.location.pathname === "/dashboard"){
-      filler = (<div className = "main-content"></div>);
+      filler = (
+        <div className = "main-content">
+
+          <ActivityFeedContainer />
+        </div>);
       header = (<div className = "activity-feed">Activity Feed</div>)
     }else{
       filler = null;

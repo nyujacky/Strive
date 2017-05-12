@@ -9,7 +9,6 @@ const mapStateToProps = state =>{
   }else{
     myroutes = state.route;
   }
-  // debugger
   return{routes: myroutes,
   currentUser: state.session.currentUser};
 };

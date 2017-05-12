@@ -1,0 +1,54 @@
+.feed-page{
+  display: flex;
+  .feed-workout-index-list{
+    margin: 10px;
+    width: 300px;
+    .feed-workout-item{
+      display: flex;
+      // border: 1px solid black;
+      margin-bottom: 20px;
+      padding: 10px;
+      div{
+        padding: 10px;
+        .route-item-distance{
+          border: none;
+          li{
+            margin: 0;
+            align-items: flex-end;
+            strong{
+              font-size: 20px;
+            }
+
+          }
+          .distance-label{
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+          }
+        }
+      }
+    }
+    .feed-date{
+      // text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+  .workout-totals{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  .workout-total-header{
+    text-align: left;
+    width:300px;
+  }
+  .workout-total-container{
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+  }
+}
