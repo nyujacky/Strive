@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
 		this.state = { email: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.guestLogin = this.guestLogin.bind(this);
+		this.guestLoginButton = this.guestLoginButton.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -44,8 +45,12 @@ class SessionForm extends React.Component {
 	}
 
 	guestLoginButton(){
+		// debugger
 		if (this.props.formType === "login"){
 			return <button className = "login-button" onClick = {this.guestLogin} >{"Guest Login"}</button>
+		}
+		else{
+			return null
 		}
 	}
 
@@ -117,7 +122,7 @@ class SessionForm extends React.Component {
 							</div>
 							<br/>
 								<button className = "login-button">{this.props.formType}</button>
-								<button className = "login-button" onClick = {this.guestLogin} >{"Guest Login"}</button>
+								{this.guestLoginButton()}
 						</div>
 					</div>
 				</form>
