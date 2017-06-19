@@ -34,15 +34,25 @@
   padding: 20px 0;
   font-size: 20px;
   .workout-item{
-    border: 1px solid black;
-    margin-bottom: 20px;
+    // border: 1px solid black;
+    margin-bottom: 30px;
     li{
       margin: 10px;
+      .workout-date{
+        // text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
     }
   }
 }
 
 
 .workout-item{
-  background-color: #f7f7f7;
+  // background-color: #f7f7f7;
+  .workout-date{
+    // text-align: center;
+    font-size: 13px;
+    color: #999;
+  }
 }

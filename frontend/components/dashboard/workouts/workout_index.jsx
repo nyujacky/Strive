@@ -18,6 +18,10 @@ class WorkoutIndex extends React.Component{
       this.props.requestMyWorkouts();
     }
   }
+  translateDate(date){
+    const finalDate = new Date(date);
+    return `${finalDate.toDateString()} at ${finalDate.toLocaleTimeString()}`;
+  }
   // getWorkoutTotal(){
   //   this.props.requestRoutes();
   // }
@@ -42,6 +46,8 @@ class WorkoutIndex extends React.Component{
             <li>{workout.title}</li>
             <li>{workout.description}</li>
             <li>{workout.route.title}</li>
+            <li className = "workout-date">{this.translateDate(workout.created)}</li>
+
             <li>{}</li>
           </div>
         )
