@@ -50,43 +50,12 @@ class WorkoutForm extends React.Component{
     this.props.requestMyRoutes();
 
   }
-  // componentDidUpdate(){
-  //   if(newProps.routes.length != this.props.routes.length){
-  //   this.props.requestMyRoutes();
-  //   }
-  // }
 
 
   render(){
-    // let selectRoute;
-    // let fullRoutes;
-    // // debugger
-    // if (this.props.routes.route === null){
-    //   // fullRoutes = (<select>
-    //     <option>No Routes</option>
-    //   // </select>);
-    //
-    // }
-    // else{
-    //   selectRoute = Object.values(this.props.routes).map((route, id) =>
-    //     <option key = {id} >
-    //     { route.title }
-    //     </option>);
-    //   fullRoutes = (
-    //     selectRoute
-    // );
-    // }
-    // debugger
 
     let displayRoutes;
     if (this.props.routes.route === null) {
-      // displayRoutes = (<div id="spinner"></div>);
-      // displayRoutes = (<div className="loader">
-      //                 <div className="circle one"></div>
-      //                 <div className="circle two"></div>
-      //                 <div className="circle three"></div>
-      //                 </div>
-      //               );
     }
     else{
 
@@ -102,7 +71,6 @@ class WorkoutForm extends React.Component{
           }
         </select>);
     }
-    // debugger
     return(
       <div className = "create-workout-page">
         <div>

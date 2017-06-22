@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import GreetingContainer from '../../greeting/greeting_container';
 import Dashboard from '../dashboard';
 
-// import DashboardContainer from './dashboard_container';
 
 class RouteIndex extends React.Component{
   componentWillMount(){
@@ -24,7 +23,6 @@ class RouteIndex extends React.Component{
     }
   render(){
     //
-    // debugger
     let displayRoutes;
     if (this.props.routes.route === null) {
       displayRoutes = (<div className="loader">

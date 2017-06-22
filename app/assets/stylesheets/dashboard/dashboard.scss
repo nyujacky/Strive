@@ -64,17 +64,12 @@
 }
 .link-container{
   position: relative;
-  // height: 35px;
-  // padding: 10px 0;
   z-index:6;
   .button-link-div{
 
     display: none;
     flex-direction: column;
     border: 1px solid #ccc;
-    // border-right: 1px solid #ccc;
-    // border-bottom: 1px solid #ccc;
-    // border-top: 1px solid #ccc;
 
     position: absolute;
     left: 10px;

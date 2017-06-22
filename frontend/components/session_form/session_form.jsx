@@ -131,5 +131,4 @@ class SessionForm extends React.Component {
 	}
 
 }
-// Please {this.props.formType} or
 export default withRouter(SessionForm);

@@ -11,10 +11,6 @@ import WorkoutIndex from './dashboard/workouts/workout_index';
 import RouteIndexContainer from './dashboard/routes/route_index_container';
 import WorkoutIndexContainer from './dashboard/workouts/workout_index_container';
 import WorkoutContainer from './dashboard/workouts/workout_container';
-// import RouteShowContainer from './dashboard/routes/route_show_container';
-// import RouteContainer from './dashboard/routes/route_container';
-// import RouteShowContainer from './dashboard/routes/route_show_container';
-// import Dashboard from './dashboard/dashboard';
 
 const Root = ({store}) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -30,7 +26,6 @@ const Root = ({store}) => {
     if (currentUser) {
       replace('/dashboard');
       //Changed from "/" so that everything returns to dashboard if logged in
-      //Change to "/" for testing so that you can log out
     }
   }
 
@@ -40,7 +35,6 @@ const Root = ({store}) => {
     if (currentUser === null) {
       replace('/');
       //Changed from "/" so that everything returns to dashboard if logged in
-      //Change to "/" for testing so that you can log out
     }
   }
 

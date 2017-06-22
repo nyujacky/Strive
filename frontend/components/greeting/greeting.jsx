@@ -15,7 +15,6 @@ const personalGreeting = (currentUser, logout) => {
   //   logout.then(hashHistory.push('/'));
   // };
   const handleLogout = (e) =>{
-    // debugger
     logout(e).then(()=> hashHistory.replace('/'));
   }
   return (

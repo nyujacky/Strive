@@ -7,12 +7,6 @@
   background-size: 100%;
   min-height: 900px;
 
-  // position: fixed;
-  //
-  //
-  // /* Preserve aspet ratio */
-  // min-width: 100%;
-  // min-height: auto;
 }
 input::-webkit-input-placeholder {
    font-size: 14px;
@@ -46,10 +40,6 @@ input::-webkit-input-placeholder {
     font-weight: 100;
     text-transform: capitalize;
 }
-
-// .placeholder{
-//   min-height: 60px;
-// }
 
 .login-button {
   display: flex;

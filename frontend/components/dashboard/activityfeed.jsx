@@ -13,7 +13,6 @@ class ActivityFeed extends React.Component{
   renderMap(route){
     let smallMap;
     //
-    // debugger
     if(route){
 
       if(route.routepolystring){
@@ -22,7 +21,6 @@ class ActivityFeed extends React.Component{
         else{
           // smallMap = (<img src = {`https://maps.googleapis.com/maps/api/staticmap?size=50x50&scale=2&zoom=0&key=AIzaSyCYSZguOomYKJj6YrPhOTETA7CwEl22N4g`}></img>);
           smallMap = (<img src = {'worldmap.jpeg'}></img>)
-          // smallMap = null;
         }
       }
       else{

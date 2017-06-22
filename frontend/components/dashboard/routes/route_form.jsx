@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
-// import DashboardContainer from './dashboard_container';
 import Dashboard from "../dashboard";
 import RouteMap from "../../map/routemap";
-// import {ModalContainer, ModalDialog} from 'react-modal-dialog';
 import Modal from 'react-modal';
 
 class RouteForm extends React.Component{
@@ -127,9 +125,3 @@ class RouteForm extends React.Component{
   }
 }
 export default RouteForm;
-
-
-
-// <button onClick = {this.handleSubmit} className = "save-button">
-//   Save
-// </button>

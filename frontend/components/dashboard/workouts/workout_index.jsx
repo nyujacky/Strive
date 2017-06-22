@@ -54,7 +54,6 @@ class WorkoutIndex extends React.Component{
           }
         </ul>);
     }
-    // debugger
     return(
       <div className = "workout-index">
         <div>
